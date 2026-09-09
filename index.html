@@ -1,206 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototype 1 - Direct Selection</title>
-    <link rel="icon" type="image/ico" href="../assets/icons/book.ico"> 
-    <link rel="stylesheet" href="https://use.typekit.net/zlg4hjm.css"> 
-    <link rel="stylesheet" href="../reset.css"> 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Prototype 2 - Live Sound Mixer</title>
+    <link rel="icon" type="image/ico" href="../assets/icons/book.ico">
+
+    <link
+        rel="stylesheet"
+        href="https://use.typekit.net/zlg4hjm.css"
+    >
+
+    <link rel="stylesheet" href="../reset.css">
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
+
     <header>
-        <h1>Dynamic Reading Soundtrack</h1> 
-        
-        <!-- navigation style reused from Assignment 1 -->
+        <h1>Dynamic Reading Soundtrack</h1>
+
         <nav class="section-nav">
-            <a href="https://charlottezeng061.github.io/charlotte-reading-soundtrack/assignment2.html"> 
-                Assignment 2
-            </a> 
-            <a href="../prototype1/index.html">01</a> 
-            <a href="../prototype2/index.html">02</a> 
-            <a href="../prototype3/index.html">03</a> 
+            <a href="https://charlottezeng061.github.io/charlotte-reading-soundtrack/assignment2.html">Assignment 2</a>
+            <a href="../prototype1/index.html">Prototype 1</a>
+            <a href="../prototype2/index.html">Prototype 2</a>
+            <a href="../prototype3/index.html">Prototype 3</a>
         </nav>
     </header>
-    <main> 
-        <section class="prototype-heading"> 
-          <h2>Prototype 1 - Direct Selection</h2> 
-          <h3>Build Your Reading Soundtrack</h3>
-          <p> 
-             Choose the feeling you want before you start reading. 
-          </p> 
+
+
+    <main>
+
+        <!-- Prototype Introduction -->
+        <section class="prototype-heading">
+         <h2>Prototype 2 - Live Sound Mixer</h2>
+
+            <h3>Mix Your Reading Soundtrack</h3>
+            <p>
+                Choose two sound layers and adjust their volume.
+            </p>
         </section>
-         
-        <!-- Book Genre --> 
-        <!-- radio inputs allow the user to select one option --> 
-        <!-- radio input group adapted from the class input-event demo
-        I adapted the same structure to select a book genre -->
+
+        <!-- Book Genre -->
+
+        <!-- select input adapted from the Select example
+        in the class input-event demo -->
 
         <section class="control-section">
-          <fieldset>
+            <label class="control-title" for="genre-select">
+                01 Book Genre
+            </label>
 
-        <legend>01 Book Genre</legend>
+            <select id="genre-select">
+                <option value="Fantasy" selected>Fantasy</option>
 
-        <div class="radio-option">
-            <input
-                type="radio"
-                id="fantasy"
-                name="genre"
-                value="Fantasy"
-                checked
-            />
-            <label for="fantasy">Fantasy</label>
-        </div>
+                <option value="Mystery">Mystery</option>
 
-        <div class="radio-option">
-            <input
-                type="radio"
-                id="mystery"
-                name="genre"
-                value="Mystery"
-            />
-            <label for="mystery">Mystery</label>
-        </div>
+                <option value="Romance">Romance</option>
 
-        <div class="radio-option">
-            <input
-                type="radio"
-                id="romance"
-                name="genre"
-                value="Romance"
-            />
-            <label for="romance">Romance</label>
-        </div>
+                <option value="Sci-Fi">Sci-Fi</option>
 
-        <div class="radio-option"> 
-            <input
-                type="radio"
-                id="sci-fi"
-                name="genre"
-                value="Sci-Fi"
-            />
-            <label for="sci-fi">Sci-Fi</label>
-        </div>
-
-    </fieldset>
-
-    <p id="genreOutput"></p>
-
-</section>
-
-<!-- Atmosphere --> 
-<!-- another group of radio inputs --> 
-<!-- giving every input the same name means only one can be selected -->
- 
-<section>
-
-    <fieldset>
-
-        <legend>02 Atmosphere</legend>
-
-        <div class="radio-option">
-            <input
-                type="radio"
-                id="calm"
-                name="atmosphere"
-                value="Calm"
-                checked
-            />
-            <label for="calm">Calm</label>
-        </div>
-
-        <div class="radio-option">
-            <input
-                type="radio"
-                id="dark"
-                name="atmosphere"
-                value="Dark"
-            />
-            <label for="dark">Dark</label>
-        </div>
-
-        <div class="radio-option">
-            <input
-                type="radio"
-                id="magical"
-                name="atmosphere"
-                value="Magical"
-            />
-            <label for="magical">Magical</label>
-        </div>
-
-        <div class="radio-option">
-            <input
-                type="radio"
-                id="nostalgic"
-                name="atmosphere"
-                value="Nostalgic"
-            />
-            <label for="nostalgic">Nostalgic</label>
-        </div>
-
-    </fieldset>
-
-    <p id="atmosphereOutput"></p>
-
-</section>
-
-<!-- Intensity --> 
- <section>
-
-    <fieldset>
-
-        <legend>03 Intensity</legend>
-
-        <input
-            type="range"
-            id="intensity"
-            min="0"
-            max="100"
-            value="50"
-        />
-
-    </fieldset>
-
-    <p id="intensity-value">50%</p>
-
-</section>
-    
-    <!-- Buttons --> 
-    <section class="actions">
-        <button id="start-button" type="button"> Start Soundtrack </button> 
-        <button id="pause-button" type="button"> Pause </button> 
-        <button id="reset-button" type="button"> Reset </button>
-    
-    </section> 
-    
-    <!-- Now Playing --> 
-     <section class="now-playing">
-         <h2>Now Playing</h2> 
-         <p> 
-            Genre: <strong id="playing-genre">—</strong> 
-        </p> 
-        <p> Atmosphere: <strong id="playing-atmosphere">—</strong>
-         </p> 
-         <p> Intensity: <strong id="playing-intensity">—</strong> 
-       
+            </select>
         </section>
-    
-     </main> 
 
-<!-- random audio players -->
 
+
+        <!-- Atmosphere -->
+        <!-- another select input adapted from the class demo -->
+
+        <section class="control-section">
+
+            <label class="control-title" for="atmosphere-select">
+                02 Atmosphere
+            </label>
+
+            <select id="atmosphere-select">
+                <option value="Calm" selected>
+                    Calm
+                </option>
+
+                <option value="Dark">
+                    Dark
+                </option>
+
+                <option value="Magical">
+                    Magical
+                </option>
+
+                <option value="Nostalgic">
+                    Nostalgic
+                </option>
+            </select>
+        </section>
+
+
+
+        <!-- Genre Sound Level -->
+
+        <!-- range input adapted from the Range example
+        in the class input-event demo -->
+
+        <section class="control-section">
+
+            <fieldset>
+
+                <legend>03 Genre Sound</legend>
+
+                <div class="range-labels">
+                    <span>Low</span>
+                    <span>High</span>
+                </div>
+
+                <input
+                    type="range"
+                    id="genre-volume"
+                    min="0"
+                    max="100"
+                    value="60"
+                >
+
+            </fieldset>
+
+            <p id="genre-volume-value">60%</p>
+
+        </section>
+
+
+
+        <!-- Atmosphere Sound Level -->
+
+        <section class="control-section">
+
+            <fieldset>
+
+                <legend>04 Atmosphere Sound</legend>
+
+                <div class="range-labels">
+                    <span>Low</span>
+                    <span>High</span>
+                </div>
+
+                <input
+                    type="range"
+                    id="atmosphere-volume"
+                    min="0"
+                    max="100"
+                    value="40"
+                >
+
+            </fieldset>
+            <p id="atmosphere-volume-value">40%</p>
+
+        </section>
+
+
+
+        <!-- Buttons -->
+
+        <section class="actions">
+
+            <button id="start-button" type="button">
+                Start Soundtrack
+            </button>
+
+            <button
+                id="pause-button"
+                type="button"
+                disabled>
+                Pause
+            </button>
+
+            <button id="reset-button" type="button">
+                Reset
+            </button>
+
+        </section>
+
+
+
+        <!-- Now Playing -->
+
+        <section class="now-playing">
+            <h2>Now Playing</h2>
+
+            <p> 
+                Genre:
+                <strong id="playing-genre">—</strong>
+            </p>
+
+            <p>
+                Genre Sound:
+                <strong id="playing-genre-volume">—</strong>
+            </p>
+
+            <p>
+                Atmosphere:
+                <strong id="playing-atmosphere">—</strong>
+            </p>
+
+            <p>
+                Atmosphere Sound:
+                <strong id="playing-atmosphere-volume">—</strong>
+            </p>
+
+            <p id="status">
+                Choose your sounds, then start the soundtrack.
+            </p>
+
+        </section>
+    </main>
+
+
+
+   <!-- random audio players -->
 <audio id="genre-audio" loop></audio>
-
 <audio id="atmosphere-audio" loop></audio>
 
 
-     <footer>
+
+    <footer>
+
         Page maintained by:
-            <a href="https://github.com/Charlottezeng061" target="_blank">
+
+        <a href="https://github.com/Charlottezeng061" target="_blank">
             Charlotte Zeng
-     </footer>
+        </a>
+
+    </footer>
+
 </body>
 </html>

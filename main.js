@@ -1,46 +1,45 @@
-///////////// Genre Radio
-// radio input method adapted from class input-event demo
+///////////// Genre Select
 
-const fantasyRadio = document.getElementById("fantasy");
-const mysteryRadio = document.getElementById("mystery");
-const romanceRadio = document.getElementById("romance");
-const sciFiRadio = document.getElementById("sci-fi");
-const genreOutput = document.getElementById("genreOutput");
-const playingGenre = document.getElementById("playing-genre");
-
-function listGenreSelection(e){
-    genreOutput.textContent = e.target.value;
-    playingGenre.textContent = e.target.value;
-}
-
-fantasyRadio.addEventListener("input", listGenreSelection);
-mysteryRadio.addEventListener("input", listGenreSelection);
-romanceRadio.addEventListener("input", listGenreSelection);
-sciFiRadio.addEventListener("input", listGenreSelection);
-
-
-///////////// Atmosphere Radio
-// radio input method adapted from class input-event demo
+// adapted from the Select example in the class input-event demo
 // https://github.com/rmit-idad-2650-wed/input-event-demos
 
-const calmRadio = document.getElementById("calm");
-const darkRadio = document.getElementById("dark");
-const magicalRadio = document.getElementById("magical");
-const nostalgicRadio = document.getElementById("nostalgic");
-const atmosphereOutput = document.getElementById("atmosphereOutput");
-const playingAtmosphere = document.getElementById("playing-atmosphere");
+const genreSelect =
+    document.getElementById("genre-select");
 
-function listAtmosphereSelection(e){
-    atmosphereOutput.textContent = e.target.value;
-    playingAtmosphere.textContent = e.target.value;
-}
+const playingGenre =
+    document.getElementById("playing-genre");
 
-calmRadio.addEventListener("input", listAtmosphereSelection);
-darkRadio.addEventListener("input", listAtmosphereSelection);
-magicalRadio.addEventListener("input", listAtmosphereSelection);
-nostalgicRadio.addEventListener("input", listAtmosphereSelection);
+genreSelect.addEventListener("change", (e) => {
+
+    playingGenre.textContent =
+        e.target.value;
+
+});
+
+
+
+///////////// Atmosphere Select
+
+// adapted from the Select example in the class input-event demo
+// https://github.com/rmit-idad-2650-wed/input-event-demos
+
+const atmosphereSelect =
+    document.getElementById("atmosphere-select");
+
+const playingAtmosphere =
+    document.getElementById("playing-atmosphere");
+
+atmosphereSelect.addEventListener("change", (e) => {
+
+    playingAtmosphere.textContent =
+        e.target.value;
+
+});
+
+
 
 ///////////// Audio
+
 // HTML audio play and pause methods based on class exercise and MDN
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause
@@ -52,9 +51,8 @@ const atmosphereAudio =
     document.getElementById("atmosphere-audio");
 
 
+
 ///////////// Audio Arrays
-// each category contains four possible sounds
-// one sound will be randomly selected when the soundtrack starts
 
 let fantasySounds = [
     "../assets/audio/genre/fantasy1.wav",
@@ -116,6 +114,7 @@ let nostalgicSounds = [
 
 
 ///////////// Random Sound
+
 // random method adapted from the class extended techniques demo
 // https://github.com/rmit-idad-2650-wed/extended-techniques-demos
 // Math.random reference:
@@ -137,54 +136,79 @@ function randomSound(soundArray){
 
 
 
-///////////// Default Volume
-// default intensity is 50%
-
-genreAudio.volume = 0.5;
-atmosphereAudio.volume = 0.5;
-
-
-///////////// Intensity Range
+///////////// Genre Volume Range
 
 // adapted from the Range example in the class input-event demo
-// I added the slider value to control the volume of the audio
 // HTMLMediaElement.volume reference:
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/volume
 
-const intensityRange =
-    document.getElementById("intensity");
+const genreVolume =
+    document.getElementById("genre-volume");
 
-const intensityOutputText =
-    document.getElementById("intensity-value");
+const genreVolumeValue =
+    document.getElementById("genre-volume-value");
 
-const playingIntensity =
-    document.getElementById("playing-intensity");
+const playingGenreVolume =
+    document.getElementById("playing-genre-volume");
 
 
-intensityRange.addEventListener("input", (e) => {
+genreVolume.addEventListener("input", (e) => {
 
-    // show percentage
-
-    intensityOutputText.textContent =
+    genreVolumeValue.textContent =
         e.target.value + "%";
 
-    playingIntensity.textContent =
+    playingGenreVolume.textContent =
         e.target.value + "%";
-
-
-    // convert 0-100 into 0-1
 
     let volume =
         e.target.value / 100;
 
-
-    // change both audio layers
-
-    genreAudio.volume = volume;
-
-    atmosphereAudio.volume = volume
+    genreAudio.volume =
+        volume;
 
 });
+
+
+
+///////////// Atmosphere Volume Range
+
+// adapted from the Range example in the class input-event demo
+
+const atmosphereVolume =
+    document.getElementById("atmosphere-volume");
+
+const atmosphereVolumeValue =
+    document.getElementById("atmosphere-volume-value");
+
+const playingAtmosphereVolume =
+    document.getElementById("playing-atmosphere-volume");
+
+
+atmosphereVolume.addEventListener("input", (e) => {
+
+    atmosphereVolumeValue.textContent =
+        e.target.value + "%";
+
+    playingAtmosphereVolume.textContent =
+        e.target.value + "%";
+
+    let volume =
+        e.target.value / 100;
+
+    atmosphereAudio.volume =
+        volume;
+
+});
+
+
+
+///////////// Default Volume
+
+genreAudio.volume =
+    0.6;
+
+atmosphereAudio.volume =
+    0.4;
 
 
 
@@ -209,54 +233,43 @@ const statusText =
 function startSoundtrack(){
 
     // pause previous soundtrack
+
     genreAudio.pause();
     atmosphereAudio.pause();
+
 
 
     // randomly select one sound
     // from the selected genre
 
-
-    if(fantasyRadio.checked === true){
+    if(genreSelect.value === "Fantasy"){
 
         genreAudio.src =
             randomSound(fantasySounds);
 
-        playingGenre.textContent =
-            "Fantasy";
-
     }
 
 
-    if(mysteryRadio.checked === true){
+    if(genreSelect.value === "Mystery"){
 
         genreAudio.src =
             randomSound(mysterySounds);
 
-        playingGenre.textContent =
-            "Mystery";
-
     }
 
 
-    if(romanceRadio.checked === true){
+    if(genreSelect.value === "Romance"){
 
         genreAudio.src =
             randomSound(romanceSounds);
 
-        playingGenre.textContent =
-            "Romance";
-
     }
 
 
-    if(sciFiRadio.checked === true){
+    if(genreSelect.value === "Sci-Fi"){
 
         genreAudio.src =
             randomSound(sciFiSounds);
-
-        playingGenre.textContent =
-            "Sci-Fi";
 
     }
 
@@ -265,66 +278,50 @@ function startSoundtrack(){
     // randomly select one sound
     // from the selected atmosphere
 
-
-    if(calmRadio.checked === true){
+    if(atmosphereSelect.value === "Calm"){
 
         atmosphereAudio.src =
             randomSound(calmSounds);
 
-        playingAtmosphere.textContent =
-            "Calm";
-
     }
 
 
-    if(darkRadio.checked === true){
+    if(atmosphereSelect.value === "Dark"){
 
         atmosphereAudio.src =
             randomSound(darkSounds);
 
-        playingAtmosphere.textContent =
-            "Dark";
-
     }
 
 
-    if(magicalRadio.checked === true){
+    if(atmosphereSelect.value === "Magical"){
 
         atmosphereAudio.src =
             randomSound(magicalSounds);
 
-        playingAtmosphere.textContent =
-            "Magical";
-
     }
 
 
-    if(nostalgicRadio.checked === true){
+    if(atmosphereSelect.value === "Nostalgic"){
 
         atmosphereAudio.src =
             randomSound(nostalgicSounds);
 
-        playingAtmosphere.textContent =
-            "Nostalgic";
-
     }
 
 
 
-    // get current intensity
-
-    let volume =
-        intensityRange.value / 100;
+    // set current volume
 
     genreAudio.volume =
-        volume;
+        genreVolume.value / 100;
 
     atmosphereAudio.volume =
-        volume;
+        atmosphereVolume.value / 100;
 
 
 
-    // play both random sounds
+    // play both layers
 
     genreAudio.play();
 
@@ -334,11 +331,24 @@ function startSoundtrack(){
 
     // update Now Playing
 
-    playingIntensity.textContent =
-        intensityRange.value + "%";
+    playingGenre.textContent =
+        genreSelect.value;
+
+    playingAtmosphere.textContent =
+        atmosphereSelect.value;
+
+    playingGenreVolume.textContent =
+        genreVolume.value + "%";
+
+    playingAtmosphereVolume.textContent =
+        atmosphereVolume.value + "%";
+
 
     statusText.textContent =
-        "Soundtrack playing."
+        "Soundtrack playing.";
+
+    pauseButton.disabled =
+        false;
 
 }
 
@@ -374,51 +384,35 @@ function resetSoundtrack(){
 
     // return audio to beginning
 
-    genreAudio.currentTime = 0;
-    atmosphereAudio.currentTime = 0;
+    genreAudio.currentTime =0;
+
+    atmosphereAudio.currentTime =0;
 
 
-    // reset genre
+    // reset dropdowns
 
-    fantasyRadio.checked = true;
-    mysteryRadio.checked = false;
-    romanceRadio.checked = false;
-    sciFiRadio.checked = false;
+    genreSelect.value ="Fantasy";
 
-
-    // reset atmosphere
-
-    calmRadio.checked = true;
-    darkRadio.checked = false;
-    magicalRadio.checked = false;
-    nostalgicRadio.checked = false;
+    atmosphereSelect.value ="Calm";
 
 
-    // reset intensity
+    // reset sliders
 
-    intensityRange.value =
-        50;
+    genreVolume.value = 60;
 
-    intensityOutputText.textContent =
-        "50%";
+    atmosphereVolume.value = 40;
 
 
-    // reset audio volume
+    genreVolumeValue.textContent = "60%";
 
-    genreAudio.volume =
-        0.5;
-
-    atmosphereAudio.volume =
-        0.5;
+    atmosphereVolumeValue.textContent = "40%";
 
 
-    // reset selection outputs
+    // reset actual audio volume
 
-    genreOutput.textContent =
-        "";
+    genreAudio.volume = 0.6;
 
-    atmosphereOutput.textContent =
-        "";
+    atmosphereAudio.volume = 0.4;
 
 
     // reset Now Playing
@@ -429,14 +423,21 @@ function resetSoundtrack(){
     playingAtmosphere.textContent =
         "—";
 
-    playingIntensity.textContent =
+    playingGenreVolume.textContent =
+        "—";
+
+    playingAtmosphereVolume.textContent =
         "—";
 
 
     // reset status
 
     statusText.textContent =
-        "Make your choices, then start the soundtrack."
+     "Choose your sounds, then start the soundtrack.";
+
+    pauseButton.disabled =
+        true;
+
 }
 
 
