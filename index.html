@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prototype 1 - Direct Selection</title>
+    <title>Prototype 5 - Example-based Guidance</title>
     <link rel="icon" type="image/ico" href="../assets/icons/book.ico"> 
     <link rel="stylesheet" href="https://use.typekit.net/zlg4hjm.css"> 
     <link rel="stylesheet" href="../reset.css"> 
@@ -28,11 +28,10 @@
     <main> 
     <section class="prototype-heading">
 
-       <h2>Prototype 4 - Descriptive Guidance</h2>
-       <h3>Choose Sounds by Feeling</h3>
+       <h2>Prototype 5 - Example-based Guidance</h2>
+       <h3>See What You Might Hear</h3>
        <p>
-        Short descriptions explain the feeling of each option
-        before you choose your soundtrack.
+       Each option shows examples of the sounds that may be randomly selected for your soundtrack.
       </p>
   </section>
          
@@ -58,10 +57,15 @@
                 checked
             />
 
-            <label for="fantasy">
-                <strong>Fantasy</strong>
-                <span>Dreamy and magical sounds</span>
-            </label>
+        <label for="fantasy">
+           <strong>Fantasy</strong>
+        <div class="sound-tags">
+        <span>Piano</span>
+        <span>Lute</span>
+        <span>Ambience</span>
+        <span>Soft Fantasy</span>
+         </div>
+     </label>
 
         </div>
 
@@ -77,7 +81,12 @@
 
             <label for="mystery">
                 <strong>Mystery</strong>
-                <span>Dark and suspenseful sounds</span>
+                 <div class="sound-tags">
+                    <span>Ambience</span>
+                    <span>Suspense Strings</span>
+                    <span>Soft Mystery</span>
+                    <span>Bright Mystery</span>
+                </div>
             </label>
 
         </div>
@@ -94,7 +103,12 @@
 
             <label for="romance">
                 <strong>Romance</strong>
-                <span>Soft and emotional sounds</span>
+                <div class="sound-tags">
+                    <span>Soft Piano</span>
+                    <span>Soft Strings</span>
+                    <span>Lo-fi Music</span>
+                    <span>String Ambience</span>
+                </div>
             </label>
 
         </div>
@@ -111,7 +125,12 @@
 
             <label for="sci-fi">
                 <strong>Sci-Fi</strong>
-                <span>Futuristic and atmospheric sounds</span>
+                <div class="sound-tags">
+                    <span>Space Ambience</span>
+                    <span>Synth</span>
+                    <span>Sci-Fi Drone</span>
+                    <span>Space Travel</span>
+                </div>
             </label>
 
         </div>
@@ -130,9 +149,7 @@
 <section>
 
     <fieldset>
-
         <legend>02 Atmosphere</legend>
-
 
         <div class="radio-option">
 
@@ -146,7 +163,12 @@
 
             <label for="calm">
                 <strong>Calm</strong>
-                <span>Peaceful and relaxing</span>
+                <div class="sound-tags">
+                    <span>Rain</span>
+                    <span>Forest</span>
+                    <span>Ocean</span>
+                    <span>Fireplace</span>
+                </div>
             </label>
 
         </div>
@@ -163,7 +185,12 @@
 
             <label for="dark">
                 <strong>Dark</strong>
-                <span>Deep and mysterious</span>
+                <div class="sound-tags">
+                    <span>Dark Drone</span>
+                    <span>Dark Wind</span>
+                    <span>Deep Drone</span>
+                    <span>Cave</span>
+                </div>
             </label>
 
         </div>
@@ -180,7 +207,12 @@
 
             <label for="magical">
                 <strong>Magical</strong>
-                <span>Light and dreamy</span>
+                <div class="sound-tags">
+                    <span>Ambience</span>
+                    <span>Chimes</span>
+                    <span>Shimmer</span>
+                    <span>Music Box</span>
+                </div>
             </label>
 
         </div>
@@ -197,11 +229,15 @@
 
             <label for="nostalgic">
                 <strong>Nostalgic</strong>
-                <span>Warm and familiar</span>
+                <div class="sound-tags">
+                    <span>Lo-fi Piano</span>
+                    <span>Nostalgic Piano</span>
+                    <span>Old Music Box</span>
+                    <span>Old Clock</span>
+                </div>
+
             </label>
-
         </div>
-
     </fieldset>
 
     <p id="atmosphereOutput"></p>
