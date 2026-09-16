@@ -1,5 +1,4 @@
-/* Prototype 1 */
-/* colours same as Assignment 1 */
+/* Prototype 4 */
 
 :root {
     --colour-1: #3f2e11;
@@ -125,7 +124,6 @@ main {
 
 
 /* radio groups */
-
 fieldset {
     border: none;
     padding: 0;
@@ -137,25 +135,33 @@ legend {
     font-size: 1.2rem;
 }
 
-
-/* place radio options beside each other */
-
+/* radio options */
 .radio-option {
-    display: inline-block;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 15px;
 }
 
-
-/* radio labels */
-
-fieldset label {
-    margin-left: 4px;
+/* radio label with description */
+.radio-option label {
+    display: flex;
+    flex-direction: column;
 }
 
+/* option name */
+.radio-option label strong {
+    font-weight: 600;
+}
+
+/* short guidance text */
+.radio-option label span {
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-top: 2px;
+}
 
 /* range slider */
-
 .range-labels {
     display: flex;
     justify-content: space-between;

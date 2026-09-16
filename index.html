@@ -24,14 +24,17 @@
             <a href="https://charlotte-exploration-three.github.io/prototype3/">03</a> 
         </nav>
     </header>
+
     <main> 
-        <section class="prototype-heading"> 
-          <h2>Prototype 1 - Direct Selection</h2> 
-          <h3>Build Your Reading Soundtrack</h3>
-          <p> 
-             Choose the feeling you want before you start reading. 
-          </p> 
-        </section>
+    <section class="prototype-heading">
+
+       <h2>Prototype 4 - Descriptive Guidance</h2>
+       <h3>Choose Sounds by Feeling</h3>
+       <p>
+        Short descriptions explain the feeling of each option
+        before you choose your soundtrack.
+      </p>
+  </section>
          
         <!-- Book Genre --> 
         <!-- radio inputs allow the user to select one option --> 
@@ -39,11 +42,14 @@
         I adapted the same structure to select a book genre -->
 
         <section class="control-section">
-          <fieldset>
+
+    <fieldset>
 
         <legend>01 Book Genre</legend>
 
+
         <div class="radio-option">
+
             <input
                 type="radio"
                 id="fantasy"
@@ -51,37 +57,63 @@
                 value="Fantasy"
                 checked
             />
-            <label for="fantasy">Fantasy</label>
+
+            <label for="fantasy">
+                <strong>Fantasy</strong>
+                <span>Dreamy and magical sounds</span>
+            </label>
+
         </div>
 
+
         <div class="radio-option">
+
             <input
                 type="radio"
                 id="mystery"
                 name="genre"
                 value="Mystery"
             />
-            <label for="mystery">Mystery</label>
+
+            <label for="mystery">
+                <strong>Mystery</strong>
+                <span>Dark and suspenseful sounds</span>
+            </label>
+
         </div>
 
+
         <div class="radio-option">
+
             <input
                 type="radio"
                 id="romance"
                 name="genre"
                 value="Romance"
             />
-            <label for="romance">Romance</label>
+
+            <label for="romance">
+                <strong>Romance</strong>
+                <span>Soft and emotional sounds</span>
+            </label>
+
         </div>
 
-        <div class="radio-option"> 
+
+        <div class="radio-option">
+
             <input
                 type="radio"
                 id="sci-fi"
                 name="genre"
                 value="Sci-Fi"
             />
-            <label for="sci-fi">Sci-Fi</label>
+
+            <label for="sci-fi">
+                <strong>Sci-Fi</strong>
+                <span>Futuristic and atmospheric sounds</span>
+            </label>
+
         </div>
 
     </fieldset>
@@ -89,6 +121,7 @@
     <p id="genreOutput"></p>
 
 </section>
+
 
 <!-- Atmosphere --> 
 <!-- another group of radio inputs --> 
@@ -100,7 +133,9 @@
 
         <legend>02 Atmosphere</legend>
 
+
         <div class="radio-option">
+
             <input
                 type="radio"
                 id="calm"
@@ -108,37 +143,63 @@
                 value="Calm"
                 checked
             />
-            <label for="calm">Calm</label>
+
+            <label for="calm">
+                <strong>Calm</strong>
+                <span>Peaceful and relaxing</span>
+            </label>
+
         </div>
 
+
         <div class="radio-option">
+
             <input
                 type="radio"
                 id="dark"
                 name="atmosphere"
                 value="Dark"
             />
-            <label for="dark">Dark</label>
+
+            <label for="dark">
+                <strong>Dark</strong>
+                <span>Deep and mysterious</span>
+            </label>
+
         </div>
 
+
         <div class="radio-option">
+
             <input
                 type="radio"
                 id="magical"
                 name="atmosphere"
                 value="Magical"
             />
-            <label for="magical">Magical</label>
+
+            <label for="magical">
+                <strong>Magical</strong>
+                <span>Light and dreamy</span>
+            </label>
+
         </div>
 
+
         <div class="radio-option">
+
             <input
                 type="radio"
                 id="nostalgic"
                 name="atmosphere"
                 value="Nostalgic"
             />
-            <label for="nostalgic">Nostalgic</label>
+
+            <label for="nostalgic">
+                <strong>Nostalgic</strong>
+                <span>Warm and familiar</span>
+            </label>
+
         </div>
 
     </fieldset>
@@ -153,15 +214,15 @@
     <fieldset>
 
         <legend>03 Intensity</legend>
+    <p class="control-description">Choose how strong you want the soundtrack to feel.</p>
 
-        <input
-            type="range"
-            id="intensity"
-            min="0"
-            max="100"
-            value="50"
-        />
-
+    <input
+    type="range"
+    id="intensity"
+    min="0"
+    max="100"
+    value="50"
+    />
     </fieldset>
 
     <p id="intensity-value">50%</p>
