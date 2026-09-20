@@ -349,7 +349,6 @@ function resetSoundtrack(){
 // button event method adapted from class exercises
 // Randomize Again uses the same function
 // as Generate Soundtrack
-
 randomButton.addEventListener(
     "click",
     generateSoundtrack
