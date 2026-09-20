@@ -252,7 +252,7 @@ playingAtmosphere.textContent =
 
     // update status
     statusText.textContent =
-        "New soundtrack generated.";}
+        "New soundtrack generated.";
 
 
 
