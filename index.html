@@ -22,7 +22,6 @@
 <body>
 
     <header>
-
         <h1>
             Dynamic Reading Soundtrack
         </h1>
@@ -48,12 +47,12 @@
       </p>
   </section>
          
-        <!-- Book Genre --> 
-        <!-- radio inputs allow the user to select one option --> 
-        <!-- radio input group adapted from the class input-event demo
-        I adapted the same structure to select a book genre -->
+<!-- Book Genre --> 
+<!-- radio inputs allow the user to select one option --> 
+<!-- radio input group adapted from the class input-event demo
+I adapted the same structure to select a book genre -->
 
-        <section class="control-section">
+<section class="control-section">
 
     <fieldset>
 
@@ -125,34 +124,19 @@
                 <strong>Sci-Fi</strong>
                 <span>Futuristic and atmospheric sounds</span>
             </label>
-
         </div>
+    </fieldset>
 
+    <p id="genreOutput"></p>
+</section>
 
-        <!-- Generated Soundtrack -->
+<!-- Atmosphere -->
 
-        <section class="now-playing">
-            <h3>03 Generated Soundtrack</h3>
+<section class="control-section">
 
+    <fieldset>
 
-<!-- Atmosphere --> 
-<!-- another group of radio inputs --> 
-<!-- giving every input the same name means only one can be selected -->
- 
-<section>
-
-            <div class="sound-result">
-                <p>
-                    <strong>Genre Sound:</strong>
-                    <span id="genre-result"> — </span>
-                </p>
-
-                <label>
-                    <input type="checkbox" id="genre-lock">
-                    Lock Genre Sound
-                </label>
-            </div>
-
+        <legend>02 Atmosphere</legend>
 
         <div class="radio-option">
 
@@ -227,7 +211,6 @@
     <p id="atmosphereOutput"></p>
 
 </section>
-
 <!-- Intensity --> 
  <section>
 
@@ -246,8 +229,9 @@
     </fieldset>
 
     <p id="intensity-value">50%</p>
-
 </section>
+
+
     
     <!-- Buttons --> 
     <section class="actions">
@@ -256,9 +240,10 @@
         <button id="reset-button" type="button"> Reset </button>
     
     </section> 
+    <p id="status">Make your choices, then start the soundtrack.</p>
     
     <!-- Now Playing --> 
-     <section class="now-playing">
+    <section class="now-playing">
          <h2>Now Playing</h2> 
          <p> 
             Genre: <strong id="playing-genre">—</strong> 
@@ -266,26 +251,8 @@
         <p> Atmosphere: <strong id="playing-atmosphere">—</strong>
          </p> 
          <p> Intensity: <strong id="playing-intensity">—</strong> 
-       
-        </section>
+    </section>
 
-
-        <!-- Audio controls -->
-
-        <div class="actions">
-            <button id="start-button">
-                Start
-            </button>
-
-            <button id="pause-button">
-                Pause
-            </button>
-
-            <button id="reset-button">
-                Reset
-            </button>
-
-        </div>
 
 
         <!-- Audio -->
