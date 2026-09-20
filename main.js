@@ -113,29 +113,21 @@ let nostalgicSounds = [
     "../assets/audio/atmosphere/nostalgic4.wav"
 ];
 
+///////////// Selected Sounds
 
+// default selected sounds
 
-///////////// Random Sound
-// random method adapted from the class extended techniques demo
-// https://github.com/rmit-idad-2650-wed/extended-techniques-demos
-// Math.random reference:
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+let selectedGenreSound =
+    fantasySounds[0];
 
-function randomSound(soundArray){
+let selectedAtmosphereSound =
+    calmSounds[0];
 
-    let randomNumber =
-        Math.random();
+let selectedGenreName =
+    "Piano & Strings";
 
-    let randomSelector =
-        Math.floor(
-            soundArray.length * randomNumber
-        );
-
-    return soundArray[randomSelector];
-
-}
-
-
+let selectedAtmosphereName =
+    "Rain";
 
 ///////////// Default Volume
 // default intensity is 50%
@@ -208,109 +200,23 @@ const statusText =
 
 function startSoundtrack(){
 
-    // pause previous soundtrack
-    genreAudio.pause();
-    atmosphereAudio.pause();
+// pause previous soundtrack
+genreAudio.pause();
+atmosphereAudio.pause();
 
+// use the sounds selected by the user
 
-    // randomly select one sound
-    // from the selected genre
+genreAudio.src =
+    selectedGenreSound;
 
+atmosphereAudio.src =
+    selectedAtmosphereSound;
 
-    if(fantasyRadio.checked === true){
+playingGenre.textContent =
+    selectedGenreName;
 
-        genreAudio.src =
-            randomSound(fantasySounds);
-
-        playingGenre.textContent =
-            "Fantasy";
-
-    }
-
-
-    if(mysteryRadio.checked === true){
-
-        genreAudio.src =
-            randomSound(mysterySounds);
-
-        playingGenre.textContent =
-            "Mystery";
-
-    }
-
-
-    if(romanceRadio.checked === true){
-
-        genreAudio.src =
-            randomSound(romanceSounds);
-
-        playingGenre.textContent =
-            "Romance";
-
-    }
-
-
-    if(sciFiRadio.checked === true){
-
-        genreAudio.src =
-            randomSound(sciFiSounds);
-
-        playingGenre.textContent =
-            "Sci-Fi";
-
-    }
-
-
-
-    // randomly select one sound
-    // from the selected atmosphere
-
-
-    if(calmRadio.checked === true){
-
-        atmosphereAudio.src =
-            randomSound(calmSounds);
-
-        playingAtmosphere.textContent =
-            "Calm";
-
-    }
-
-
-    if(darkRadio.checked === true){
-
-        atmosphereAudio.src =
-            randomSound(darkSounds);
-
-        playingAtmosphere.textContent =
-            "Dark";
-
-    }
-
-
-    if(magicalRadio.checked === true){
-
-        atmosphereAudio.src =
-            randomSound(magicalSounds);
-
-        playingAtmosphere.textContent =
-            "Magical";
-
-    }
-
-
-    if(nostalgicRadio.checked === true){
-
-        atmosphereAudio.src =
-            randomSound(nostalgicSounds);
-
-        playingAtmosphere.textContent =
-            "Nostalgic";
-
-    }
-
-
-
+playingAtmosphere.textContent =
+    selectedAtmosphereName;
     // get current intensity
 
     let volume =
@@ -321,7 +227,6 @@ function startSoundtrack(){
 
     atmosphereAudio.volume =
         volume;
-
 
 
     // play both random sounds
