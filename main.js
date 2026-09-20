@@ -67,51 +67,21 @@ let nostalgicSounds = [
     "../assets/audio/atmosphere/nostalgic4.wav"
 ];
 
+///////////// Selected Sounds
 
+// default selected sounds
 
-///////////// Audio Names
+let selectedGenreSound =
+    fantasySounds[0];
 
-// The name arrays use the same order as the audio arrays.
-// This means the same random number can be used to select both the audio file and its correct name.
+let selectedAtmosphereSound =
+    calmSounds[0];
 
+let selectedGenreName =
+    "Piano & Strings";
 
-// Genre names
-let fantasyNames = [
-    "Fantasy Piano",
-    "Lute",
-    "Fantasy Ambience",
-    "Soft Fantasy"
-];
-
-let mysteryNames = [
-    "Mystery Ambience",
-    "Suspense Strings",
-    "Soft Mystery",
-    "Bright Mystery"
-];
-
-let romanceNames = [
-    "Soft Piano",
-    "Soft Strings",
-    "Lo-fi Music",
-    "String Ambience"
-];
-
-let sciFiNames = [
-    "Space Ambience",
-    "Synth",
-    "Sci-Fi Drone",
-    "Space Travel"
-];
-
-
-// Atmosphere names
-let calmNames = [
-    "Rain",
-    "Forest",
-    "Ocean",
-    "Fireplace"
-];
+let selectedAtmosphereName =
+    "Rain";
 
 let darkNames = [
     "Dark Drone",
@@ -218,130 +188,24 @@ const statusText =
 // Math.random reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 
-function randomNumber(soundArray){
+// pause previous soundtrack
+genreAudio.pause();
+atmosphereAudio.pause();
 
-    // Math.random creates a random number
-    // between 0 and 1
+// use the sounds selected by the user
 
-    let randomValue =
-        Math.random();
+genreAudio.src =
+    selectedGenreSound;
 
-    // multiply it by the number of sounds
-    // then Math.floor changes it into
-    // a whole number such as 0, 1, 2 or 3
+atmosphereAudio.src =
+    selectedAtmosphereSound;
 
-    let randomSelector =
-        Math.floor(
-            soundArray.length * randomValue
-        );
+playingGenre.textContent =
+    selectedGenreName;
 
-
-    return randomSelector;
-
-}
-
-
-
-///////////// Generate Soundtrack
-
-function generateSoundtrack(){
-
-
-    ///////////// Randomize Genre
-
-    // only generate a new genre sound
-    // when the genre lock is not checked
-
-    if(genreLock.checked === false){
-
-
-        // Fantasy
-
-        if(genreSelect.value === "Fantasy"){
-
-            let number =
-                randomNumber(fantasySounds);
-
-
-            // use the random number
-            // to choose the audio file
-
-            genreAudio.src =
-                fantasySounds[number];
-
-
-            // use the same number
-            // to show the matching name
-
-            genreResult.textContent =
-                fantasyNames[number];
-
-        }
-
-        // Mystery
-        if(genreSelect.value === "Mystery"){
-
-            let number =
-                randomNumber(mysterySounds);
-
-            genreAudio.src =
-                mysterySounds[number];
-
-            genreResult.textContent =
-                mysteryNames[number];
-        }
-
-
-
-        // Romance
-        if(genreSelect.value === "Romance"){
-
-            let number =
-                randomNumber(romanceSounds);
-
-            genreAudio.src =
-                romanceSounds[number];
-
-            genreResult.textContent =
-                romanceNames[number];
-        }
-
-
-        // Sci-F
-        if(genreSelect.value === "Sci-Fi"){
-
-            let number =
-                randomNumber(sciFiSounds);
-
-            genreAudio.src =
-                sciFiSounds[number];
-
-            genreResult.textContent =
-                sciFiNames[number];
-        }
-
-    }
-
-
-    ///////////// Randomise Atmosphere
-
-    // only generate a new atmosphere sound
-    // when the atmosphere lock is not checked
-
-    if(atmosphereLock.checked === false){
-
-        // Calm
-        if(atmosphereSelect.value === "Calm"){
-
-            let number =
-                randomNumber(calmSounds);
-
-            atmosphereAudio.src =
-                calmSounds[number];
-
-            atmosphereResult.textContent =
-                calmNames[number];
-        }
+playingAtmosphere.textContent =
+    selectedAtmosphereName;
+    // get current intensity
 
 
         // Dark
@@ -353,10 +217,7 @@ function generateSoundtrack(){
             atmosphereAudio.src =
                 darkSounds[number];
 
-            atmosphereResult.textContent =
-                darkNames[number];
-
-        }
+    // play both random sounds
 
 
         // Magical

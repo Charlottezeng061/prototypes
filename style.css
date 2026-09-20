@@ -134,6 +134,26 @@ legend {
     flex-direction: column;
 }
 
+/* sound examples */
+
+.sound-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 5px;
+}
+
+
+.sound-tags span {
+    padding: 2px 7px;
+
+    border: 1px solid #9c8e73;
+    border-radius: 10px;
+
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
 /* option name */
 .radio-option label strong {
     font-weight: 600;

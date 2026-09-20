@@ -4,16 +4,12 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>
-        Prototype 4 - Descriptive Guidance
-    </title>
-   <link rel="icon" type="image/ico" href="../assets/icons/book.ico">
-    <link rel="stylesheet" href="https://use.typekit.net/zlg4hjm.css">
-    <link rel="stylesheet" href="../reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype 5 - Example-based Guidance</title>
+    <link rel="icon" type="image/ico" href="../assets/icons/book.ico"> 
+    <link rel="stylesheet" href="https://use.typekit.net/zlg4hjm.css"> 
+    <link rel="stylesheet" href="../reset.css"> 
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 
@@ -40,11 +36,10 @@
     <main> 
     <section class="prototype-heading">
 
-       <h2>Prototype 4 - Descriptive Guidance</h2>
-       <h3>Choose Sounds by Feeling</h3>
+       <h2>Prototype 5 - Example-based Guidance</h2>
+       <h3>See What You Might Hear</h3>
        <p>
-        Short descriptions explain the feeling of each option
-        before you choose your soundtrack.
+         Choose from specific sound examples to create your soundtrack.
       </p>
   </section>
          
@@ -70,10 +65,15 @@
                 checked
             />
 
-            <label for="fantasy">
-                <strong>Fantasy</strong>
-                <span>Dreamy and magical sounds</span>
-            </label>
+        <label for="fantasy">
+           <strong>Fantasy</strong>
+        <div class="sound-tags">
+    <button type="button" id="fantasy-sound-1">Piano & Strings</button>
+    <button type="button" id="fantasy-sound-2">Medieval Lute</button>
+    <button type="button" id="fantasy-sound-3">Fantasy Soundscape</button>
+    <button type="button" id="fantasy-sound-4">Piano & Pad</button>
+         </div>
+     </label>
 
         </div>
 
@@ -89,7 +89,12 @@
 
             <label for="mystery">
                 <strong>Mystery</strong>
-                <span>Dark and suspenseful sounds</span>
+                 <div class="sound-tags">
+                        <button type="button" id="mystery-sound-1">Mystery Background</button>
+                        <button type="button" id="mystery-sound-2">Suspense Strings</button>
+                        <button type="button" id="mystery-sound-3">Choir & Guitar</button>
+                        <button type="button" id="mystery-sound-4">Bright Mystery</button>
+                </div>
             </label>
 
         </div>
@@ -106,7 +111,12 @@
 
             <label for="romance">
                 <strong>Romance</strong>
-                <span>Soft and emotional sounds</span>
+                <div class="sound-tags">
+                    <button type="button" id="romance-sound-1">Emotional Piano</button>
+                    <button type="button" id="romance-sound-2">Violin & Cello</button>
+                    <button type="button" id="romance-sound-3">Lo-fi Guitar</button>
+                    <button type="button" id="romance-sound-4">Soft Strings</button>
+                </div>
             </label>
 
         </div>
@@ -123,7 +133,12 @@
 
             <label for="sci-fi">
                 <strong>Sci-Fi</strong>
-                <span>Futuristic and atmospheric sounds</span>
+                <div class="sound-tags">
+                       <button type="button" id="sci-fi-sound-1">Space Ambience</button>
+                       <button type="button" id="sci-fi-sound-2">Sci-Fi Synth</button>
+                       <button type="button" id="sci-fi-sound-3">Deep Drone</button>
+                       <button type="button" id="sci-fi-sound-4">Space Travel</button>
+                </div>
             </label>
 
         </div>
@@ -141,18 +156,8 @@
  
 <section>
 
-            <div class="sound-result">
-                <p>
-                    <strong>Genre Sound:</strong>
-                    <span id="genre-result"> — </span>
-                </p>
-
-                <label>
-                    <input type="checkbox" id="genre-lock">
-                    Lock Genre Sound
-                </label>
-            </div>
-
+    <fieldset>
+        <legend>02 Atmosphere</legend>
 
         <div class="radio-option">
 
@@ -166,7 +171,12 @@
 
             <label for="calm">
                 <strong>Calm</strong>
-                <span>Peaceful and relaxing</span>
+                <div class="sound-tags">
+                       <button type="button" id="calm-sound-1">Rain</button>
+                       <button type="button" id="calm-sound-2">Windy Forest</button>
+                       <button type="button" id="calm-sound-3">Ocean Waves</button>
+                       <button type="button" id="calm-sound-4">Fireplace</button>
+                </div>
             </label>
 
         </div>
@@ -183,7 +193,12 @@
 
             <label for="dark">
                 <strong>Dark</strong>
-                <span>Deep and mysterious</span>
+                <div class="sound-tags">
+                     <button type="button" id="dark-sound-1">Dark Drone</button>
+                     <button type="button" id="dark-sound-2">Wind</button>
+                     <button type="button" id="dark-sound-3">Deep Drone</button>
+                     <button type="button" id="dark-sound-4">Cave</button>
+                </div>
             </label>
 
         </div>
@@ -200,7 +215,12 @@
 
             <label for="magical">
                 <strong>Magical</strong>
-                <span>Light and dreamy</span>
+                <div class="sound-tags">
+                     <button type="button" id="magical-sound-1">Choir & Synth</button>
+                     <button type="button" id="magical-sound-2">Chimes</button>
+                     <button type="button" id="magical-sound-3">Cymbal Shimmer</button>
+                     <button type="button" id="magical-sound-4">Music Box & Bells</button>
+                </div>
             </label>
 
         </div>
@@ -217,13 +237,16 @@
 
             <label for="nostalgic">
                 <strong>Nostalgic</strong>
-                <span>Warm and familiar</span>
+                <div class="sound-tags">
+                        <button type="button" id="nostalgic-sound-1">Lo-fi Piano</button>
+                        <button type="button" id="nostalgic-sound-2">Nostalgic Piano</button>
+                        <button type="button" id="nostalgic-sound-3">Music Box</button>
+                        <button type="button" id="nostalgic-sound-4">Old Clock</button>
+                </div>
+
             </label>
-
         </div>
-
     </fieldset>
-
     <p id="atmosphereOutput"></p>
 
 </section>
@@ -254,6 +277,7 @@
         <button id="start-button" type="button"> Start Soundtrack </button> 
         <button id="pause-button" type="button"> Pause </button> 
         <button id="reset-button" type="button"> Reset </button>
+        <p id="status">Choose your sounds, then start the soundtrack.</p>
     
     </section> 
     
@@ -270,32 +294,8 @@
         </section>
 
 
-        <!-- Audio controls -->
-
-        <div class="actions">
-            <button id="start-button">
-                Start
-            </button>
-
-            <button id="pause-button">
-                Pause
-            </button>
-
-            <button id="reset-button">
-                Reset
-            </button>
-
-        </div>
-
-
-        <!-- Audio -->
-        <!--
-        The audio element and loop attribute are based on MDN:
-        https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/audio
-        -->
-
-        <audio id="genre-audio"loop></audio>
-        <audio id="atmosphere-audio"loop></audio>
+<audio id="genre-audio" loop></audio>
+<audio id="atmosphere-audio" loop></audio>
 
     </main>
 
