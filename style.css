@@ -1,4 +1,5 @@
-/* prototype3 */
+/* Prototype 4 */
+
 :root {
     --colour-1: #3f2e11;
     --colour-2: #dfd4b8;
@@ -107,15 +108,50 @@ main {
 }
 
 
-.control-title {
-    display: block;
+/* radio groups */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
     margin-bottom: 15px;
     font-size: 1.2rem;
 }
 
+/* radio options */
+.radio-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 15px;
+}
 
+/* radio label with description */
+.radio-option label {
+    display: flex;
+    flex-direction: column;
+}
 
-/* Select */
+/* option name */
+.radio-option label strong {
+    font-weight: 600;
+}
+
+/* short guidance text */
+.radio-option label span {
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-top: 2px;
+}
+
+/* range slider */
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
 
 select {
     width: 100%;
