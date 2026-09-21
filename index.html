@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="../reset.css"> 
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
 
 </head>
 
@@ -50,209 +49,225 @@
 
         <section class="control-section">
 
-    <fieldset>
+    <fieldset id="genre-sounds">
 
         <legend>01 Book Genre</legend>
 
+         <div class="sound-group">
 
-        <div class="radio-option">
+            <strong>Fantasy</strong>
 
-            <input
-                type="radio"
-                id="fantasy"
-                name="genre"
-                value="Fantasy"
-                checked
-            />
+            <div class="sound-tags">
 
-        <label for="fantasy">
-           <strong>Fantasy</strong>
-        <div class="sound-tags">
-    <button type="button" id="fantasy-sound-1">Piano & Strings</button>
-    <button type="button" id="fantasy-sound-2">Medieval Lute</button>
-    <button type="button" id="fantasy-sound-3">Fantasy Soundscape</button>
-    <button type="button" id="fantasy-sound-4">Piano & Pad</button>
-         </div>
-     </label>
+                <button type="button" id="fantasy-sound-1">
+                    Piano & Strings
+                </button>
 
-        </div>
+                <button type="button" id="fantasy-sound-2">
+                    Medieval Lute
+                </button>
 
+                <button type="button" id="fantasy-sound-3">
+                    Fantasy Soundscape
+                </button>
 
-        <div class="radio-option">
+                <button type="button" id="fantasy-sound-4">
+                    Piano & Pad
+                </button>
 
-            <input
-                type="radio"
-                id="mystery"
-                name="genre"
-                value="Mystery"
-            />
-
-            <label for="mystery">
-                <strong>Mystery</strong>
-                 <div class="sound-tags">
-                        <button type="button" id="mystery-sound-1">Mystery Background</button>
-                        <button type="button" id="mystery-sound-2">Suspense Strings</button>
-                        <button type="button" id="mystery-sound-3">Choir & Guitar</button>
-                        <button type="button" id="mystery-sound-4">Bright Mystery</button>
-                </div>
-            </label>
+            </div>
 
         </div>
 
 
-        <div class="radio-option">
+        <div class="sound-group">
 
-            <input
-                type="radio"
-                id="romance"
-                name="genre"
-                value="Romance"
-            />
+            <strong>Mystery</strong>
 
-            <label for="romance">
-                <strong>Romance</strong>
-                <div class="sound-tags">
-                    <button type="button" id="romance-sound-1">Emotional Piano</button>
-                    <button type="button" id="romance-sound-2">Violin & Cello</button>
-                    <button type="button" id="romance-sound-3">Lo-fi Guitar</button>
-                    <button type="button" id="romance-sound-4">Soft Strings</button>
-                </div>
-            </label>
+            <div class="sound-tags">
 
-        </div>
+                <button type="button" id="mystery-sound-1">
+                    Mystery Background
+                </button>
 
+                <button type="button" id="mystery-sound-2">
+                    Suspense Strings
+                </button>
 
-        <div class="radio-option">
+                <button type="button" id="mystery-sound-3">
+                    Choir & Guitar
+                </button>
 
-            <input
-                type="radio"
-                id="sci-fi"
-                name="genre"
-                value="Sci-Fi"
-            />
+                <button type="button" id="mystery-sound-4">
+                    Bright Mystery
+                </button>
 
-            <label for="sci-fi">
-                <strong>Sci-Fi</strong>
-                <div class="sound-tags">
-                       <button type="button" id="sci-fi-sound-1">Space Ambience</button>
-                       <button type="button" id="sci-fi-sound-2">Sci-Fi Synth</button>
-                       <button type="button" id="sci-fi-sound-3">Deep Drone</button>
-                       <button type="button" id="sci-fi-sound-4">Space Travel</button>
-                </div>
-            </label>
+            </div>
 
         </div>
 
+          <div class="sound-group">
 
-        <!-- Generated Soundtrack -->
+            <strong>Romance</strong>
 
-        <section class="now-playing">
-            <h3>03 Generated Soundtrack</h3>
+            <div class="sound-tags">
+
+                <button type="button" id="romance-sound-1">
+                    Emotional Piano
+                </button>
+
+                <button type="button" id="romance-sound-2">
+                    Violin & Cello
+                </button>
+
+                <button type="button" id="romance-sound-3">
+                    Lo-fi Guitar
+                </button>
+
+                <button type="button" id="romance-sound-4">
+                    Soft Strings
+                </button>
+
+            </div>
+
+        </div>
+
+<div class="sound-group">
+
+            <strong>Sci-Fi</strong>
+
+            <div class="sound-tags">
+
+                <button type="button" id="sci-fi-sound-1">
+                    Space Ambience
+                </button>
+
+                <button type="button" id="sci-fi-sound-2">
+                    Sci-Fi Synth
+                </button>
+
+                <button type="button" id="sci-fi-sound-3">
+                    Deep Drone
+                </button>
+
+                <button type="button" id="sci-fi-sound-4">
+                    Space Travel
+                </button>
+
+            </div>
+
+        </div>
+    </fieldset>
+        </section>
 
 
 <!-- Atmosphere --> 
-<!-- another group of radio inputs --> 
-<!-- giving every input the same name means only one can be selected -->
  
-<section>
+<section class="control-section">
 
-    <fieldset>
+    <fieldset id="atmosphere-sounds">
         <legend>02 Atmosphere</legend>
 
-        <div class="radio-option">
+         <div class="sound-group">
+            <strong>Calm</strong>
 
-            <input
-                type="radio"
-                id="calm"
-                name="atmosphere"
-                value="Calm"
-                checked
-            />
+            <div class="sound-tags">
 
-            <label for="calm">
-                <strong>Calm</strong>
-                <div class="sound-tags">
-                       <button type="button" id="calm-sound-1">Rain</button>
-                       <button type="button" id="calm-sound-2">Windy Forest</button>
-                       <button type="button" id="calm-sound-3">Ocean Waves</button>
-                       <button type="button" id="calm-sound-4">Fireplace</button>
-                </div>
-            </label>
+                <button type="button" id="calm-sound-1">
+                    Rain
+                </button>
 
+                <button type="button" id="calm-sound-2">
+                    Windy Forest
+                </button>
+
+                <button type="button" id="calm-sound-3">
+                    Ocean Waves
+                </button>
+
+                <button type="button" id="calm-sound-4">
+                    Fireplace
+                </button>
+            </div>
         </div>
 
+<div class="sound-group">
 
-        <div class="radio-option">
+            <strong>Dark</strong>
 
-            <input
-                type="radio"
-                id="dark"
-                name="atmosphere"
-                value="Dark"
-            />
+            <div class="sound-tags">
 
-            <label for="dark">
-                <strong>Dark</strong>
-                <div class="sound-tags">
-                     <button type="button" id="dark-sound-1">Dark Drone</button>
-                     <button type="button" id="dark-sound-2">Wind</button>
-                     <button type="button" id="dark-sound-3">Deep Drone</button>
-                     <button type="button" id="dark-sound-4">Cave</button>
-                </div>
-            </label>
+                <button type="button" id="dark-sound-1">
+                    Dark Drone
+                </button>
 
+                <button type="button" id="dark-sound-2">
+                    Wind
+                </button>
+
+                <button type="button" id="dark-sound-3">
+                    Deep Drone
+                </button>
+
+                <button type="button" id="dark-sound-4">
+                    Cave
+                </button>
+            </div>
         </div>
 
+ <div class="sound-group">
+            <strong>Magical</strong>
 
-        <div class="radio-option">
+            <div class="sound-tags">
 
-            <input
-                type="radio"
-                id="magical"
-                name="atmosphere"
-                value="Magical"
-            />
+                <button type="button" id="magical-sound-1">
+                    Choir & Synth
+                </button>
 
-            <label for="magical">
-                <strong>Magical</strong>
-                <div class="sound-tags">
-                     <button type="button" id="magical-sound-1">Choir & Synth</button>
-                     <button type="button" id="magical-sound-2">Chimes</button>
-                     <button type="button" id="magical-sound-3">Cymbal Shimmer</button>
-                     <button type="button" id="magical-sound-4">Music Box & Bells</button>
-                </div>
-            </label>
+                <button type="button" id="magical-sound-2">
+                    Chimes
+                </button>
 
+                <button type="button" id="magical-sound-3">
+                    Cymbal Shimmer
+                </button>
+
+                <button type="button" id="magical-sound-4">
+                    Music Box & Bells
+                </button>
+            </div>
         </div>
 
+ <div class="sound-group">
 
-        <div class="radio-option">
+            <strong>Nostalgic</strong>
 
-            <input
-                type="radio"
-                id="nostalgic"
-                name="atmosphere"
-                value="Nostalgic"
-            />
+            <div class="sound-tags">
 
-            <label for="nostalgic">
-                <strong>Nostalgic</strong>
-                <div class="sound-tags">
-                        <button type="button" id="nostalgic-sound-1">Lo-fi Piano</button>
-                        <button type="button" id="nostalgic-sound-2">Nostalgic Piano</button>
-                        <button type="button" id="nostalgic-sound-3">Music Box</button>
-                        <button type="button" id="nostalgic-sound-4">Old Clock</button>
-                </div>
+                <button type="button" id="nostalgic-sound-1">
+                    Lo-fi Piano
+                </button>
 
-            </label>
+                <button type="button" id="nostalgic-sound-2">
+                    Nostalgic Piano
+                </button>
+
+                <button type="button" id="nostalgic-sound-3">
+                    Music Box
+                </button>
+
+                <button type="button" id="nostalgic-sound-4">
+                    Old Clock
+                </button>
+
+            </div>
         </div>
     </fieldset>
-    <p id="atmosphereOutput"></p>
-
 </section>
 
+
 <!-- Intensity --> 
- <section>
+ <section class="control-section">
 
     <fieldset>
 
@@ -272,43 +287,34 @@
 
 </section>
     
-    <!-- Buttons --> 
-    <section class="actions">
-        <button id="start-button" type="button"> Start Soundtrack </button> 
-        <button id="pause-button" type="button"> Pause </button> 
-        <button id="reset-button" type="button"> Reset </button>
-        <p id="status">Choose your sounds, then start the soundtrack.</p>
-    
-    </section> 
+<!-- Buttons --> 
+<section class="actions">
+    <button id="start-button" type="button"> Start Soundtrack </button> 
+    <button id="pause-button" type="button"> Pause </button> 
+    <button id="reset-button" type="button"> Reset </button>
+</section> 
+<p id="status">Choose your sounds, then start the soundtrack.</p>
     
     <!-- Now Playing --> 
-     <section class="now-playing">
-         <h2>Now Playing</h2> 
-         <p> 
-            Genre: <strong id="playing-genre">—</strong> 
-        </p> 
-        <p> Atmosphere: <strong id="playing-atmosphere">—</strong>
-         </p> 
-         <p> Intensity: <strong id="playing-intensity">—</strong> 
-       
-        </section>
+<section class="now-playing">
+    <h2>Now Playing</h2> 
+    <p> Genre: <strong id="playing-genre">—</strong> </p> 
 
+    <p> Atmosphere: <strong id="playing-atmosphere">—</strong></p> 
+
+    <p> Intensity: <strong id="playing-intensity">—</strong></p>
+</section>
 
 <audio id="genre-audio" loop></audio>
 <audio id="atmosphere-audio" loop></audio>
 
-    </main>
+</main>
 
-
-    <footer>
-        <p>
-           Page maintained by:
-
-        <a href="https://github.com/Charlottezeng061" target="_blank">
-            Charlotte Zeng
-        </a>
-        </p>
-    </footer>
-
+<footer>
+ <p> Page maintained by:
+     <a href="https://github.com/Charlottezeng061" target="_blank">
+     Charlotte Zeng </a>
+ </p>
+</footer>
 </body>
 </html>

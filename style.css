@@ -1,4 +1,4 @@
-/* Prototype 4 */
+/* Prototype 5 */
 
 :root {
     --colour-1: #3f2e11;
@@ -135,7 +135,6 @@ legend {
 }
 
 /* sound examples */
-
 .sound-tags {
     display: flex;
     flex-wrap: wrap;
@@ -153,6 +152,7 @@ legend {
     font-size: 0.8rem;
     font-weight: 300;
 }
+
 
 /* option name */
 .radio-option label strong {
@@ -217,6 +217,11 @@ button:disabled {
     cursor: default;
 }
 
+/* keep selected sound button highlighted */
+.sound-tags button.selected {
+    background-color: #506744;
+    color: var(--colour-2);
+}
 
 
 /* Generated Soundtrack */
