@@ -199,15 +199,12 @@ input[type="range"] {
 .actions button {
     width: 44px;
     height: 44px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-color: transparent;
     border: 1px solid var(--colour-1);
     border-radius: 6px;
-
     cursor: pointer;
 }
 
