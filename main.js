@@ -35,31 +35,31 @@ let sciFiSounds = [
 
 // Atmosphere sounds
 let calmSounds = [
-    "../assets/audio/atmosphere/calm1.wav",
-    "../assets/audio/atmosphere/calm2.wav",
-    "../assets/audio/atmosphere/calm3.wav",
-    "../assets/audio/atmosphere/calm4.wav"
+    "./assets/audio/atmosphere/calm1.wav",
+    "./assets/audio/atmosphere/calm2.wav",
+    "./assets/audio/atmosphere/calm3.wav",
+    "./assets/audio/atmosphere/calm4.wav"
 ];
 
 let darkSounds = [
-    "../assets/audio/atmosphere/dark1.wav",
-    "../assets/audio/atmosphere/dark2.wav",
-    "../assets/audio/atmosphere/dark3.wav",
-    "../assets/audio/atmosphere/dark4.wav"
+    "./assets/audio/atmosphere/dark1.wav",
+    "./assets/audio/atmosphere/dark2.wav",
+    "./assets/audio/atmosphere/dark3.wav",
+    "./assets/audio/atmosphere/dark4.wav"
 ];
 
 let magicalSounds = [
-    "../assets/audio/atmosphere/magical1.wav",
-    "../assets/audio/atmosphere/magical2.wav",
-    "../assets/audio/atmosphere/magical3.wav",
-    "../assets/audio/atmosphere/magical4.wav"
+    "./assets/audio/atmosphere/magical1.wav",
+    "./assets/audio/atmosphere/magical2.wav",
+    "./assets/audio/atmosphere/magical3.wav",
+    "./assets/audio/atmosphere/magical4.wav"
 ];
 
 let nostalgicSounds = [
-    "../assets/audio/atmosphere/nostalgic1.wav",
-    "../assets/audio/atmosphere/nostalgic2.wav",
-    "../assets/audio/atmosphere/nostalgic3.wav",
-    "../assets/audio/atmosphere/nostalgic4.wav"
+    "./assets/audio/atmosphere/nostalgic1.wav",
+    "./assets/audio/atmosphere/nostalgic2.wav",
+    "./assets/audio/atmosphere/nostalgic3.wav",
+    "./assets/audio/atmosphere/nostalgic4.wav"
 ];
 
 ///////////// Selected Sounds
