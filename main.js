@@ -130,13 +130,11 @@ function randomSound(soundArray){
 }
 
 
-
 ///////////// Default Volume
 // default intensity is 50%
 
 genreAudio.volume = 0.5;
 atmosphereAudio.volume = 0.5;
-
 
 ///////////// Intensity Range
 
@@ -179,8 +177,6 @@ intensityRange.addEventListener("input", (e) => {
     atmosphereAudio.volume = volume
 
 });
-
-
 
 ///////////// Buttons
 
@@ -336,7 +332,7 @@ function togglePlayPause(){
         startSoundtrack();
 
         playPauseIcon.src =
-            "../assets/icons/pause.png";
+            "assets/icons/pause.png";
 
         isPlaying = true;
 
@@ -345,7 +341,7 @@ function togglePlayPause(){
         pauseSoundtrack();
 
         playPauseIcon.src =
-            "../assets/icons/play.png";
+            "assets/icons/play.png";
 
         isPlaying = false;
 
@@ -378,11 +374,8 @@ function toggleRepeat(){
             "aria-pressed",
             "false"
         );
-
         isRepeat = false;
-
     }
-
 }
 
 ///////////// Reset
