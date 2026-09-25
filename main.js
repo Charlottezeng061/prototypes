@@ -53,59 +53,59 @@ const atmosphereAudio =
 // one sound will be randomly selected when the soundtrack starts
 
 let fantasySounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy1.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy2.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy3.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy1.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy2.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy3.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy4.mp3"
 ];
 
 let mysterySounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/mystery1.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/mystery2.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/mystery3.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/mystery4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/mystery1.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/mystery2.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/mystery3.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/mystery4.mp3"
 ];
 
 let romanceSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/romance1.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/romance2.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/romance3.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/romance4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/romance1.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/romance2.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/romance3.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/romance4.mp3"
 ];
 
 let sciFiSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi1.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi2.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi3.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi1.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi2.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi3.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi4.mp3"
 ];
 
 let calmSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/calm1.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/calm2.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/calm3.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/calm4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/calm1.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/calm2.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/calm3.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/calm4.mp3"
 ];
 
 let darkSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/dark1.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/dark2.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/dark3.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/dark4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/dark1.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/dark2.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/dark3.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/dark4.mp3"
 ];
 
 let magicalSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/magical1.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/magical2.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/magical3.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/magical4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/magical1.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/magical2.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/magical3.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/magical4.mp3"
 ];
 
 let nostalgicSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic1.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic2.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic3.wav",
-"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic1.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic2.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic3.mp3",
+"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic4.mp3"
 ];
 
 
