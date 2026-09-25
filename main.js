@@ -194,6 +194,7 @@ document.getElementById("reset-button");
 
 let isPlaying = false;
 let isRepeat = false;
+let hasStarted = false;
 
 ///////////// Start Soundtrack
 
@@ -298,28 +299,19 @@ atmosphereAudio.pause();
 
 
 
-    // play both random sounds
+// play both random sounds
+genreAudio.play();
+atmosphereAudio.play();
 
-    genreAudio.play();
-
-    atmosphereAudio.play();
-
-
-
-    // update Now Playing
-
-    playingIntensity.textContent =
-        intensityRange.value + "%";
+// update Now Playing
+playingIntensity.textContent =
+intensityRange.value + "%";
 }
-
-
 
 ///////////// Pause Soundtrack
 
 function pauseSoundtrack(){
-
     genreAudio.pause();
-
     atmosphereAudio.pause();
 }
 
@@ -329,24 +321,26 @@ function togglePlayPause(){
 
     if(isPlaying === false){
 
-        startSoundtrack();
+        if(hasStarted === false){
+            startSoundtrack();
+            hasStarted = true;
+        } else {
+            genreAudio.play();
+            atmosphereAudio.play();
+        }
 
         playPauseIcon.src =
             "assets/icons/pause.png";
-
         isPlaying = true;
 
     } else {
 
         pauseSoundtrack();
-
         playPauseIcon.src =
             "assets/icons/play.png";
-
         isPlaying = false;
 
     }
-
 }
 
 ///////////// Repeat
@@ -444,9 +438,10 @@ function resetSoundtrack(){
         // reset play button
 
 playPauseIcon.src =
-    "../assets/icons/play.png";
+    "assets/icons/play.png";
 
 isPlaying = false;
+hasStarted = false;
 
 
 // reset repeat
