@@ -5,11 +5,9 @@ const fantasyRadio = document.getElementById("fantasy");
 const mysteryRadio = document.getElementById("mystery");
 const romanceRadio = document.getElementById("romance");
 const sciFiRadio = document.getElementById("sci-fi");
-const genreOutput = document.getElementById("genreOutput");
 const playingGenre = document.getElementById("playing-genre");
 
 function listGenreSelection(e){
-    genreOutput.textContent = e.target.value;
     playingGenre.textContent = e.target.value;
 }
 
@@ -27,11 +25,9 @@ const calmRadio = document.getElementById("calm");
 const darkRadio = document.getElementById("dark");
 const magicalRadio = document.getElementById("magical");
 const nostalgicRadio = document.getElementById("nostalgic");
-const atmosphereOutput = document.getElementById("atmosphereOutput");
 const playingAtmosphere = document.getElementById("playing-atmosphere");
 
 function listAtmosphereSelection(e){
-    atmosphereOutput.textContent = e.target.value;
     playingAtmosphere.textContent = e.target.value;
 }
 
@@ -57,62 +53,60 @@ const atmosphereAudio =
 // one sound will be randomly selected when the soundtrack starts
 
 let fantasySounds = [
-    "./assets/audio/genre/fantasy1.wav",
-    "./assets/audio/genre/fantasy2.wav",
-    "./assets/audio/genre/fantasy3.wav",
-    "./assets/audio/genre/fantasy4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy1.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy2.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy3.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy4.wav"
 ];
 
 let mysterySounds = [
-    "./assets/audio/genre/mystery1.wav",
-    "./assets/audio/genre/mystery2.wav",
-    "./assets/audio/genre/mystery3.wav",
-    "./assets/audio/genre/mystery4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/mystery1.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/mystery2.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/mystery3.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/mystery4.wav"
 ];
 
 let romanceSounds = [
-    "./assets/audio/genre/romance1.wav",
-    "./assets/audio/genre/romance2.wav",
-    "./assets/audio/genre/romance3.wav",
-    "./assets/audio/genre/romance4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/romance1.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/romance2.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/romance3.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/romance4.wav"
 ];
 
 let sciFiSounds = [
-    "./assets/audio/genre/sci-fi1.wav",
-    "./assets/audio/genre/sci-fi2.wav",
-    "./assets/audio/genre/sci-fi3.wav",
-    "./assets/audio/genre/sci-fi4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi1.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi2.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi3.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi4.wav"
 ];
 
-
 let calmSounds = [
-    "./assets/audio/atmosphere/calm1.wav",
-    "./assets/audio/atmosphere/calm2.wav",
-    "./assets/audio/atmosphere/calm3.wav",
-    "./assets/audio/atmosphere/calm4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/calm1.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/calm2.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/calm3.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/calm4.wav"
 ];
 
 let darkSounds = [
-    "./assets/audio/atmosphere/dark1.wav",
-    "./assets/audio/atmosphere/dark2.wav",
-    "./assets/audio/atmosphere/dark3.wav",
-    "./assets/audio/atmosphere/dark4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/dark1.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/dark2.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/dark3.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/dark4.wav"
 ];
 
 let magicalSounds = [
-    "./assets/audio/atmosphere/magical1.wav",
-    "./assets/audio/atmosphere/magical2.wav",
-    "./assets/audio/atmosphere/magical3.wav",
-    "./assets/audio/atmosphere/magical4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/magical1.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/magical2.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/magical3.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/magical4.wav"
 ];
 
 let nostalgicSounds = [
-    "./assets/audio/atmosphere/nostalgic1.wav",
-    "./assets/audio/atmosphere/nostalgic2.wav",
-    "./assets/audio/atmosphere/nostalgic3.wav",
-    "./assets/audio/atmosphere/nostalgic4.wav"
+"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic1.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic2.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic3.wav",
+"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic4.wav"
 ];
-
 
 
 ///////////// Random Sound
@@ -190,57 +184,48 @@ intensityRange.addEventListener("input", (e) => {
 
 ///////////// Buttons
 
-const startButton =
-    document.getElementById("start-button");
+const playPauseButton =
+document.getElementById("play-pause-button");
 
-const pauseButton =
-    document.getElementById("pause-button");
+const playPauseIcon =
+document.getElementById("play-pause-icon");
+
+const repeatButton =
+document.getElementById("repeat-button");
 
 const resetButton =
-    document.getElementById("reset-button");
+document.getElementById("reset-button");
 
-const statusText =
-    document.getElementById("status");
-
-
+let isPlaying = false;
+let isRepeat = false;
 
 ///////////// Start Soundtrack
 
 function startSoundtrack(){
 
-    // pause previous soundtrack
-    genreAudio.pause();
-    atmosphereAudio.pause();
+// pause previous soundtrack
+genreAudio.pause();
+atmosphereAudio.pause();
 
 
-    // randomly select one sound
-    // from the selected genre
-
-
-    if(fantasyRadio.checked === true){
-
-        genreAudio.src =
-            randomSound(fantasySounds);
-
+// randomly select one sound
+// from the selected genre
+ if(fantasyRadio.checked === true){
+     genreAudio.src =
+        randomSound(fantasySounds);
         playingGenre.textContent =
-            "Fantasy";
+        "Fantasy";
+}
 
-    }
-
-
-    if(mysteryRadio.checked === true){
-
-        genreAudio.src =
-            randomSound(mysterySounds);
-
+ if(mysteryRadio.checked === true){
+     genreAudio.src =
+        randomSound(mysterySounds);
         playingGenre.textContent =
-            "Mystery";
-
+        "Mystery";
     }
 
 
     if(romanceRadio.checked === true){
-
         genreAudio.src =
             randomSound(romanceSounds);
 
@@ -260,11 +245,8 @@ function startSoundtrack(){
 
     }
 
-
-
     // randomly select one sound
     // from the selected atmosphere
-
 
     if(calmRadio.checked === true){
 
@@ -276,7 +258,6 @@ function startSoundtrack(){
 
     }
 
-
     if(darkRadio.checked === true){
 
         atmosphereAudio.src =
@@ -286,7 +267,6 @@ function startSoundtrack(){
             "Dark";
 
     }
-
 
     if(magicalRadio.checked === true){
 
@@ -298,7 +278,6 @@ function startSoundtrack(){
 
     }
 
-
     if(nostalgicRadio.checked === true){
 
         atmosphereAudio.src =
@@ -308,7 +287,6 @@ function startSoundtrack(){
             "Nostalgic";
 
     }
-
 
 
     // get current intensity
@@ -336,10 +314,6 @@ function startSoundtrack(){
 
     playingIntensity.textContent =
         intensityRange.value + "%";
-
-    statusText.textContent =
-        "Soundtrack playing."
-
 }
 
 
@@ -351,17 +325,69 @@ function pauseSoundtrack(){
     genreAudio.pause();
 
     atmosphereAudio.pause();
+}
 
-    statusText.textContent =
-        "Soundtrack paused.";
+///////////// Play and Pause
+
+function togglePlayPause(){
+
+    if(isPlaying === false){
+
+        startSoundtrack();
+
+        playPauseIcon.src =
+            "../assets/icons/pause.png";
+
+        isPlaying = true;
+
+    } else {
+
+        pauseSoundtrack();
+
+        playPauseIcon.src =
+            "../assets/icons/play.png";
+
+        isPlaying = false;
+
+    }
 
 }
 
+///////////// Repeat
 
+function toggleRepeat(){
+
+    if(isRepeat === false){
+
+        genreAudio.loop = true;
+        atmosphereAudio.loop = true;
+
+        repeatButton.setAttribute(
+            "aria-pressed",
+            "true"
+        );
+
+        isRepeat = true;
+
+    } else {
+
+        genreAudio.loop = false;
+        atmosphereAudio.loop = false;
+
+        repeatButton.setAttribute(
+            "aria-pressed",
+            "false"
+        );
+
+        isRepeat = false;
+
+    }
+
+}
 
 ///////////// Reset
 
-// currentTime reference from MDN
+// currentTime reference from:
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime
 
 function resetSoundtrack(){
@@ -412,15 +438,6 @@ function resetSoundtrack(){
         0.5;
 
 
-    // reset selection outputs
-
-    genreOutput.textContent =
-        "";
-
-    atmosphereOutput.textContent =
-        "";
-
-
     // reset Now Playing
 
     playingGenre.textContent =
@@ -431,29 +448,42 @@ function resetSoundtrack(){
 
     playingIntensity.textContent =
         "—";
+        // reset play button
+
+playPauseIcon.src =
+    "../assets/icons/play.png";
+
+isPlaying = false;
 
 
-    // reset status
+// reset repeat
 
-    statusText.textContent =
-        "Make your choices, then start the soundtrack."
+genreAudio.loop = false;
+atmosphereAudio.loop = false;
+
+repeatButton.setAttribute(
+    "aria-pressed",
+    "false"
+);
+
+isRepeat = false;
 }
-
-
 
 ///////////// Button Event Listeners
 
-startButton.addEventListener(
+playPauseButton.addEventListener(
     "click",
-    startSoundtrack
+    togglePlayPause
 );
 
-pauseButton.addEventListener(
+repeatButton.addEventListener(
     "click",
-    pauseSoundtrack
+    toggleRepeat
 );
 
 resetButton.addEventListener(
     "click",
     resetSoundtrack
 );
+
+

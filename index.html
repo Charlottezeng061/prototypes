@@ -88,9 +88,6 @@
         </div>
 
     </fieldset>
-
-    <p id="genreOutput"></p>
-
 </section>
 
 <!-- Atmosphere --> 
@@ -145,9 +142,6 @@
         </div>
 
     </fieldset>
-
-    <p id="atmosphereOutput"></p>
-
 </section>
 
 <!-- Intensity --> 
@@ -171,13 +165,21 @@
 
 </section>
     
-    <!-- Buttons --> 
-    <section class="actions">
-        <button id="start-button" type="button"> Start Soundtrack </button> 
-        <button id="pause-button" type="button"> Pause </button> 
-        <button id="reset-button" type="button"> Reset </button>
-    
-    </section> 
+<!-- Buttons --> 
+<section class="actions">
+    <button id="play-pause-button" type="button" aria-label="Play">
+        <img id="play-pause-icon" src="../assets/icons/play.png" alt="">
+    </button>
+
+    <button id="repeat-button" type="button" aria-label="Repeat" aria-pressed="false">
+        <img src="../assets/icons/repeat.png" alt="">
+    </button>
+
+    <button id="reset-button" type="button" aria-label="Reset">
+        <img src="../assets/icons/replay.png" alt="">
+    </button>
+
+</section> 
     
     <!-- Now Playing --> 
      <section class="now-playing">
@@ -195,9 +197,9 @@
 
 <!-- random audio players -->
 
-<audio id="genre-audio" loop></audio>
+<audio id="genre-audio"></audio>
 
-<audio id="atmosphere-audio" loop></audio>
+<audio id="atmosphere-audio"></audio>
 
 
      <footer>

@@ -190,34 +190,42 @@ input[type="range"] {
 .actions {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
-button {
-    padding: 6px 12px;
+.actions button {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
     border: 1px solid var(--colour-1);
-    border-radius: 5px;
-
-    background-color: var(--colour-2);
-    color: var(--colour-1);
-
-    font-family: "proxima-nova", sans-serif;
+    border-radius: 6px;
 
     cursor: pointer;
 }
 
-button:hover {
-    background-color: var(--colour-1);
-    color: var(--colour-2);
+.actions img {
+    width: 22px;
+    height: 22px;
 }
 
-button:disabled {
-    opacity: 0.5;
+/* change button colour when hovering */
+
+.actions button:hover {
+    background-color: #506744;
+    border-color: #506744;
 }
-
-
+.actions button[aria-pressed="true"] {
+    background-color: #506744;
+    border-color: #506744;
+}
 /* now playing */
 
 .now-playing {
