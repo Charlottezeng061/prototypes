@@ -6,31 +6,31 @@
 
 // Genre sounds
 let fantasySounds = [
-    "../assets/audio/genre/fantasy1.wav",
-    "../assets/audio/genre/fantasy2.wav",
-    "../assets/audio/genre/fantasy3.wav",
-    "../assets/audio/genre/fantasy4.wav"
+    "./assets/audio/genre/fantasy1.wav",
+    "./assets/audio/genre/fantasy2.wav",
+    "./assets/audio/genre/fantasy3.wav",
+    "./assets/audio/genre/fantasy4.wav"
 ];
 
 let mysterySounds = [
-    "../assets/audio/genre/mystery1.wav",
-    "../assets/audio/genre/mystery2.wav",
-    "../assets/audio/genre/mystery3.wav",
-    "../assets/audio/genre/mystery4.wav"
+    "./assets/audio/genre/mystery1.wav",
+    "./assets/audio/genre/mystery2.wav",
+    "./assets/audio/genre/mystery3.wav",
+    "./assets/audio/genre/mystery4.wav"
 ];
 
 let romanceSounds = [
-    "../assets/audio/genre/romance1.wav",
-    "../assets/audio/genre/romance2.wav",
-    "../assets/audio/genre/romance3.wav",
-    "../assets/audio/genre/romance4.wav"
+    "./assets/audio/genre/romance1.wav",
+    "./assets/audio/genre/romance2.wav",
+    "./assets/audio/genre/romance3.wav",
+    "./assets/audio/genre/romance4.wav"
 ];
 
 let sciFiSounds = [
-    "../assets/audio/genre/sci-fi1.wav",
-    "../assets/audio/genre/sci-fi2.wav",
-    "../assets/audio/genre/sci-fi3.wav",
-    "../assets/audio/genre/sci-fi4.wav"
+    "./assets/audio/genre/sci-fi1.wav",
+    "./assets/audio/genre/sci-fi2.wav",
+    "./assets/audio/genre/sci-fi3.wav",
+    "./assets/audio/genre/sci-fi4.wav"
 ];
 
 // Atmosphere sounds
