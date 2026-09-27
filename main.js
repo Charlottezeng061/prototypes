@@ -7,16 +7,7 @@ const romanceRadio = document.getElementById("romance");
 const sciFiRadio = document.getElementById("sci-fi");
 const playingGenre = document.getElementById("playing-genre");
 
-function listGenreSelection(e){
-    playingGenre.textContent = e.target.value;
-}
-
-fantasyRadio.addEventListener("input", listGenreSelection);
 mysteryRadio.addEventListener("input", listGenreSelection);
-romanceRadio.addEventListener("input", listGenreSelection);
-sciFiRadio.addEventListener("input", listGenreSelection);
-
-
 ///////////// Atmosphere Radio
 // radio input method adapted from class input-event demo
 // https://github.com/rmit-idad-2650-wed/input-event-demos
@@ -26,15 +17,6 @@ const darkRadio = document.getElementById("dark");
 const magicalRadio = document.getElementById("magical");
 const nostalgicRadio = document.getElementById("nostalgic");
 const playingAtmosphere = document.getElementById("playing-atmosphere");
-
-function listAtmosphereSelection(e){
-    playingAtmosphere.textContent = e.target.value;
-}
-
-calmRadio.addEventListener("input", listAtmosphereSelection);
-darkRadio.addEventListener("input", listAtmosphereSelection);
-magicalRadio.addEventListener("input", listAtmosphereSelection);
-nostalgicRadio.addEventListener("input", listAtmosphereSelection);
 
 ///////////// Audio
 // HTML audio play and pause methods based on class exercise and MDN
@@ -128,7 +110,6 @@ function randomSound(soundArray){
 
 }
 
-
 ///////////// Default Volume
 // default intensity is 50%
 
@@ -155,26 +136,16 @@ const playingIntensity =
 intensityRange.addEventListener("input", (e) => {
 
     // show percentage
-
     intensityOutputText.textContent =
         e.target.value + "%";
 
-    playingIntensity.textContent =
-        e.target.value + "%";
-
-
     // convert 0-100 into 0-1
-
     let volume =
         e.target.value / 100;
 
-
     // change both audio layers
-
     genreAudio.volume = volume;
-
     atmosphereAudio.volume = volume
-
 });
 
 ///////////// Buttons
