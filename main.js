@@ -71,17 +71,10 @@ let nostalgicSounds = [
 // so [0] selects the first sound in the array.
 // Reference: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays
 
-let selectedGenreSound =
-    fantasySounds[0];
-
-let selectedAtmosphereSound =
-    calmSounds[0];
-
-let selectedGenreName =
-    "Piano & Strings";
-
-let selectedAtmosphereName =
-    "Rain";
+let selectedGenreSound = "";
+let selectedAtmosphereSound = "";
+let selectedGenreName = "";
+let selectedAtmosphereName = "";
 
 ///////////// Audio
 // Find the two audio elements used to play the genre and atmosphere sounds
@@ -486,6 +479,11 @@ let isRepeat = false;
 // Start the selected genre and atmosphere sounds together
 
 function startSoundtrack(){
+    // both sounds need to be selected before playing
+    if(selectedGenreSound === "" || selectedAtmosphereSound === ""){
+        return;
+    }
+
     // pause both sounds first
     genreAudio.pause();
     atmosphereAudio.pause();
@@ -516,6 +514,10 @@ function startSoundtrack(){
 ///////////// Play / Pause
 
 function togglePlayPause(){
+     // both sounds need to be selected first
+    if(selectedGenreSound === "" || selectedAtmosphereSound === ""){
+        return;
+    }
 
     if(isPlaying === false){
 
@@ -635,18 +637,17 @@ atmosphereAudio.currentTime = 0;
 genreAudio.src ="";
 atmosphereAudio.src = "";
 
-// return to default sounds
-selectedGenreSound =
-    fantasySounds[0];
+selectedGenreSound = "";
+selectedAtmosphereSound = "";
+selectedGenreName = "";
+selectedAtmosphereName = "";
 
-selectedAtmosphereSound =
-    calmSounds[0];
-
-selectedGenreName =
-    "Piano & Strings";
-
-selectedAtmosphereName =
-    "Rain";
+// remove selected button styles
+document.querySelectorAll(
+    "#genre-sounds button, #atmosphere-sounds button"
+).forEach(function(button){
+    button.classList.remove("selected");
+});
 
 // reset intensity
 intensityRange.value = 50;
