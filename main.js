@@ -5,74 +5,67 @@
 // Array tutorials:
 // https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays
 // https://www.w3schools.com/js/js_arrays.asp
-
-
-// Genre sounds
 let fantasySounds = [
-    "./assets/audio/genre/fantasy1.wav",
-    "./assets/audio/genre/fantasy2.wav",
-    "./assets/audio/genre/fantasy3.wav",
-    "./assets/audio/genre/fantasy4.wav"
+    "assets/audio/genre/fantasy1.mp3",
+    "assets/audio/genre/fantasy2.mp3",
+    "assets/audio/genre/fantasy3.mp3",
+    "assets/audio/genre/fantasy4.mp3"
 ];
 
 let mysterySounds = [
-    "./assets/audio/genre/mystery1.wav",
-    "./assets/audio/genre/mystery2.wav",
-    "./assets/audio/genre/mystery3.wav",
-    "./assets/audio/genre/mystery4.wav"
+    "assets/audio/genre/mystery1.mp3",
+    "assets/audio/genre/mystery2.mp3",
+    "assets/audio/genre/mystery3.mp3",
+    "assets/audio/genre/mystery4.mp3"
 ];
 
 let romanceSounds = [
-    "./assets/audio/genre/romance1.wav",
-    "./assets/audio/genre/romance2.wav",
-    "./assets/audio/genre/romance3.wav",
-    "./assets/audio/genre/romance4.wav"
+    "assets/audio/genre/romance1.mp3",
+    "assets/audio/genre/romance2.mp3",
+    "assets/audio/genre/romance3.mp3",
+    "assets/audio/genre/romance4.mp3"
 ];
 
 let sciFiSounds = [
-    "./assets/audio/genre/sci-fi1.wav",
-    "./assets/audio/genre/sci-fi2.wav",
-    "./assets/audio/genre/sci-fi3.wav",
-    "./assets/audio/genre/sci-fi4.wav"
+    "assets/audio/genre/sci-fi1.mp3",
+    "assets/audio/genre/sci-fi2.mp3",
+    "assets/audio/genre/sci-fi3.mp3",
+    "assets/audio/genre/sci-fi4.mp3"
 ];
 
 
-// Atmosphere sounds
-
 let calmSounds = [
-    "./assets/audio/atmosphere/calm1.wav",
-    "./assets/audio/atmosphere/calm2.wav",
-    "./assets/audio/atmosphere/calm3.wav",
-    "./assets/audio/atmosphere/calm4.wav"
+    "assets/audio/atmosphere/calm1.mp3",
+    "assets/audio/atmosphere/calm2.mp3",
+    "assets/audio/atmosphere/calm3.mp3",
+    "assets/audio/atmosphere/calm4.mp3"
 ];
 
 let darkSounds = [
-    "./assets/audio/atmosphere/dark1.wav",
-    "./assets/audio/atmosphere/dark2.wav",
-    "./assets/audio/atmosphere/dark3.wav",
-    "./assets/audio/atmosphere/dark4.wav"
+    "assets/audio/atmosphere/dark1.mp3",
+    "assets/audio/atmosphere/dark2.mp3",
+    "assets/audio/atmosphere/dark3.mp3",
+    "assets/audio/atmosphere/dark4.mp3"
 ];
 
 let magicalSounds = [
-    "./assets/audio/atmosphere/magical1.wav",
-    "./assets/audio/atmosphere/magical2.wav",
-    "./assets/audio/atmosphere/magical3.wav",
-    "./assets/audio/atmosphere/magical4.wav"
+    "assets/audio/atmosphere/magical1.mp3",
+    "assets/audio/atmosphere/magical2.mp3",
+    "assets/audio/atmosphere/magical3.mp3",
+    "assets/audio/atmosphere/magical4.mp3"
 ];
 
 let nostalgicSounds = [
-    "./assets/audio/atmosphere/nostalgic1.wav",
-    "./assets/audio/atmosphere/nostalgic2.wav",
-    "./assets/audio/atmosphere/nostalgic3.wav",
-    "./assets/audio/atmosphere/nostalgic4.wav"
+    "assets/audio/atmosphere/nostalgic1.mp3",
+    "assets/audio/atmosphere/nostalgic2.mp3",
+    "assets/audio/atmosphere/nostalgic3.mp3",
+    "assets/audio/atmosphere/nostalgic4.mp3"
 ];
-
 
 ///////////// Audio Names
 
 // The name arrays use the same order as the audio arrays.
 // This means the same random number can be used to select both the audio file and its correct name.
-
 
 // Genre names
 let fantasyNames = [
@@ -133,12 +126,9 @@ let nostalgicNames = [
     "Old Clock"
 ];
 
-
-
 ///////////// Select Controls
 
 // select input method adapted from the class input-event demo
-
 const genreSelect =
     document.getElementById("genre-select");
 
@@ -151,7 +141,6 @@ const atmosphereSelect =
 // checkbox values are checked using .checked
 // true means the sound is locked
 // false means the sound can be randomised
-
 const genreLock =
     document.getElementById("genre-lock");
 
@@ -160,7 +149,6 @@ const atmosphereLock =
 
 
 ///////////// Generated Results
-
 const genreResult =
     document.getElementById("genre-result");
 
@@ -174,33 +162,31 @@ const atmosphereResult =
 // class exercises and MDN.
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/pause
-
 const genreAudio =
     document.getElementById("genre-audio");
 
 const atmosphereAudio =
     document.getElementById("atmosphere-audio");
 
-
 // set a comfortable default volume
-
 genreAudio.volume = 0.5;
 atmosphereAudio.volume = 0.5;
 
-
 /////////// Buttons
-
 const randomButton =
     document.getElementById("random-button");
 
-const startButton =
-    document.getElementById("start-button");
+const playPauseButton =
+    document.getElementById("play-pause-button");
 
-const pauseButton =
-    document.getElementById("pause-button");
+const playPauseIcon =
+    document.getElementById("play-pause-icon");
 
-const resetButton =
-    document.getElementById("reset-button");
+let isPlaying = false;
+
+const repeatButton =
+    document.getElementById("repeat-button");
+let isRepeat = false;
 
 const statusText =
     document.getElementById("status");
@@ -210,118 +196,79 @@ const statusText =
 ///////////// Random Number
 // random method adapted from the class extended techniques demo
 // Math.random reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-
-
 function randomNumber(soundArray){
-
-    // Math.random creates a random number
-    // between 0 and 1
-
     let randomValue =
         Math.random();
-
-    // multiply it by the number of sounds
-    // then Math.floor changes it into
-    // a whole number such as 0, 1, 2 or 3
 
     let randomSelector =
         Math.floor(
             soundArray.length * randomValue
         );
-
-
     return randomSelector;
-
 }
 
 
-
 ///////////// Generate Soundtrack
-
 function generateSoundtrack(){
 
+//////////Randomize Genre
 
-    ///////////// Randomize Genre
-
-    // only generate a new genre sound
-    // when the genre lock is not checked
-
+// Create New Mix generates a new random combination
     if(genreLock.checked === false){
 
+    // Fantasy
+    if(genreSelect.value === "Fantasy"){
+        let number =
+         randomNumber(fantasySounds);
 
-        // Fantasy
+    // use the random number
+    // to choose the audio file
 
-        if(genreSelect.value === "Fantasy"){
+        genreAudio.src =
+            fantasySounds[number];
 
-            let number =
-                randomNumber(fantasySounds);
+    // use the same number
+    // to show the matching name
+    genreResult.textContent =
+            fantasyNames[number];
+    }
 
-
-            // use the random number
-            // to choose the audio file
-
-            genreAudio.src =
-                fantasySounds[number];
-
-
-            // use the same number
-            // to show the matching name
-
-            genreResult.textContent =
-                fantasyNames[number];
-
-        }
-
-        // Mystery
-        if(genreSelect.value === "Mystery"){
-
-            let number =
-                randomNumber(mysterySounds);
-
-            genreAudio.src =
-                mysterySounds[number];
-
+    // Mystery
+    if(genreSelect.value === "Mystery"){
+     let number =
+        randomNumber(mysterySounds);
+        genreAudio.src =
+            mysterySounds[number];
             genreResult.textContent =
                 mysteryNames[number];
         }
 
-
-
-        // Romance
-        if(genreSelect.value === "Romance"){
-
-            let number =
-                randomNumber(romanceSounds);
-
+    // Romance
+    if(genreSelect.value === "Romance"){
+      let number =
+            randomNumber(romanceSounds);
             genreAudio.src =
                 romanceSounds[number];
-
             genreResult.textContent =
                 romanceNames[number];
         }
 
-
-        // Sci-F
-        if(genreSelect.value === "Sci-Fi"){
-
-            let number =
-                randomNumber(sciFiSounds);
-
-            genreAudio.src =
-                sciFiSounds[number];
-
-            genreResult.textContent =
-                sciFiNames[number];
+    // Sci-Fi
+    if(genreSelect.value === "Sci-Fi"){
+     let number =
+        randomNumber(sciFiSounds);
+         genreAudio.src =
+            sciFiSounds[number];
+        genreResult.textContent =
+            sciFiNames[number];
         }
-
     }
 
 
-    ///////////// Randomise Atmosphere
+    ///////////// Randomize Atmosphere
 
     // only generate a new atmosphere sound
     // when the atmosphere lock is not checked
-
     if(atmosphereLock.checked === false){
 
         // Calm
@@ -337,7 +284,6 @@ function generateSoundtrack(){
                 calmNames[number];
         }
 
-
         // Dark
         if(atmosphereSelect.value === "Dark"){
 
@@ -349,9 +295,7 @@ function generateSoundtrack(){
 
             atmosphereResult.textContent =
                 darkNames[number];
-
         }
-
 
         // Magical
         if(atmosphereSelect.value === "Magical"){
@@ -378,130 +322,91 @@ function generateSoundtrack(){
 
             atmosphereResult.textContent =
                 nostalgicNames[number];
-
         }
-
     }
-
     // update status
     statusText.textContent =
         "New soundtrack generated.";}
 
-
-
-
-
 //////////// Start Soundtrack
 
-function startSoundtrack(){
+///////////// Play and Pause Soundtrack
 
-    // play the generated genre
-    // and atmosphere together
+function togglePlayPause(){
 
-    genreAudio.play();
-    atmosphereAudio.play();
-    statusText.textContent =
-        "Soundtrack playing.";
+    if(isPlaying === false){
+
+        // play both audio layers
+        genreAudio.play();
+        atmosphereAudio.play();
+
+        playPauseIcon.src =
+            "assets/icons/pause.png";
+
+        playPauseButton.setAttribute(
+            "aria-label",
+            "Pause"
+        );
+
+        statusText.textContent =
+            "Soundtrack playing.";
+
+        isPlaying = true;
+    } else {
+
+        // pause both audio layers
+        genreAudio.pause();
+        atmosphereAudio.pause();
+
+        playPauseIcon.src =
+            "assets/icons/play.png";
+
+        playPauseButton.setAttribute(
+            "aria-label",
+            "Play"
+        );
+
+        statusText.textContent =
+            "Soundtrack paused.";
+
+        isPlaying = false;
+    }
 }
 
+///////////// Repeat Soundtrack
 
+// repeat both audio layers when repeat is turned on
+function toggleRepeat(){
 
-///////////// Pause Soundtrack
+    isRepeat = !isRepeat;
 
-function pauseSoundtrack(){
+    genreAudio.loop =
+        isRepeat;
 
-    genreAudio.pause();
-    atmosphereAudio.pause();
-    statusText.textContent =
-        "Soundtrack paused.";
+    atmosphereAudio.loop =
+        isRepeat;
 
-}
-
-
-
-///////////// Reset
-
-// currentTime reference from MDN:
-// https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime
-
-function resetSoundtrack(){
-    // pause both audio layers
-
-    genreAudio.pause();
-    atmosphereAudio.pause();
-
-
-
-    // return audio to the beginning
-
-    genreAudio.currentTime = 0;
-    atmosphereAudio.currentTime = 0;
-
-
-
-    // remove generated audio
-
-    genreAudio.src =
-        "";
-    atmosphereAudio.src =
-        "";
-
-
-
-    // reset dropdowns
-
-    genreSelect.value = "Fantasy";
-    atmosphereSelect.value = "Calm";
-
-
-    // unlock both sounds
-
-    genreLock.checked = false;
-    atmosphereLock.checked = false;
-
-
-
-    // reset generated names
-
-    genreResult.textContent = "—";
-    atmosphereResult.textContent = "—";
-
-    // reset volume
-    genreAudio.volume = 0.5;
-    atmosphereAudio.volume = 0.5;
-
-
-
-    // reset status
-    statusText.textContent =
-        "Choose your sounds, then generate a soundtrack."
+    repeatButton.setAttribute(
+        "aria-pressed",
+        isRepeat
+    );
 }
 
 ///////////// Button Event Listeners
 
 // button event method adapted from class exercises
-// Randomize Again uses the same function
-// as Generate Soundtrack
-
 randomButton.addEventListener(
     "click",
     generateSoundtrack
 );
 
-
-startButton.addEventListener(
+playPauseButton.addEventListener(
     "click",
-    startSoundtrack
+    togglePlayPause
 );
 
-
-pauseButton.addEventListener(
+repeatButton.addEventListener(
     "click",
-    pauseSoundtrack
+    toggleRepeat
 );
 
-
-resetButton.addEventListener(
-    "click",
-    resetSoundtrack
-);

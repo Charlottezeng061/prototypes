@@ -22,7 +22,6 @@ h1 {
     color: #506744;
 }
 
-
 h2,
 h3,
 .control-title {
@@ -30,17 +29,14 @@ h3,
     font-weight: 500;
 }
 
-
 h2 {
     color: #506744;
 }
-
 
 h3,
 .control-title {
     color: #6e845f;
 }
-
 
 
 /* Header */
@@ -83,22 +79,22 @@ header h1 {
 
 
 /* Main Content */
-
 main {
     max-width: 800px;
     margin: auto;
 }
 
 /* Prototype Introduction */
-
 .prototype-heading {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     padding-bottom: 25px;
     border-bottom: 1px solid var(--colour-1);
 }
+
 .prototype-heading p {
     margin-bottom: 5px;
 }
+
 /* Control Sections */
 
 .control-section {
@@ -106,17 +102,13 @@ main {
     padding-bottom: 25px;
 }
 
-
 .control-title {
     display: block;
     margin-bottom: 15px;
     font-size: 1.2rem;
 }
 
-
-
 /* Select */
-
 select {
     width: 100%;
     padding: 8px;
@@ -128,18 +120,20 @@ select {
 }
 
 
-
 /* Buttons */
+
+/* keep the soundtrack controls centred */
 .actions {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-
-button {
+/* main button for creating a new random mix */
+#random-button {
     padding: 10px 18px;
     border: 1px solid var(--colour-1);
     border-radius: 5px;
@@ -150,18 +144,50 @@ button {
     cursor: pointer;
 }
 
-
-button:hover {
+#random-button:hover {
     background-color: #506744;
 }
 
-
-button:disabled {
-    opacity: 0.5;
-    cursor: default;
+/* playback control buttons */
+#play-pause-button,
+#repeat-button {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--colour-1);
+    border-radius: 50%;
+    background-color: var(--colour-2);
+    cursor: pointer;
+    /* keep the icons in the centre */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* control the size of the playback icons */
+#play-pause-button img,
+#repeat-button img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
 
+/* give visual feedback when hovering */
+#play-pause-button:hover,
+#repeat-button:hover {
+    background-color: #6e845f;
+}
+
+/* keep the repeat button highlighted when it is active */
+#repeat-button[aria-pressed="true"] {
+    background-color: #6e845f;
+}
+
+/* show when a control cannot be used */
+button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
 
 /* Generated Soundtrack */
 .now-playing {
@@ -205,9 +231,7 @@ button:disabled {
 input[type="checkbox"] {
     margin-right: 6px;
     accent-color: var(--colour-1);
-
 }
-
 
 /* Status */
 #status {

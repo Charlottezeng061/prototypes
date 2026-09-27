@@ -11,9 +11,9 @@
     <title>
         Prototype 3 - Controlled Random
     </title>
-   <link rel="icon" type="image/ico" href="../assets/icons/book.ico">
+   <link rel="icon" type="image/ico" href="assets/icons/book.ico">
     <link rel="stylesheet" href="https://use.typekit.net/zlg4hjm.css">
-    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 
@@ -60,7 +60,6 @@
 
 
         <!-- Genre -->
-
         <section class="control-section">
             <label class="control-title" for="genre-select">
                 01 Book Genre
@@ -75,7 +74,6 @@
         </section>
 
         <!-- Atmosphere -->
-
         <section class="control-section">
 
             <label class="control-title" for="atmosphere-select">02 Atmosphere</label>
@@ -90,19 +88,16 @@
         </section>
 
      <!-- Randomize soundtrack-->
-
         <div class="actions">
-            <button id="random-button">Randomize Soundtrack</button>
+            <button id="random-button">Create New Mix</button>
         </div>
 
 
         <!-- Generated Soundtrack -->
-
         <section class="now-playing">
             <h3>03 Generated Soundtrack</h3>
 
             <!-- Genre Result -->
-
             <div class="sound-result">
                 <p>
                     <strong>Genre Sound:</strong>
@@ -117,7 +112,6 @@
 
 
             <!-- Atmosphere Result -->
-
             <div class="sound-result">
                 <p>
                     <strong>Atmosphere Sound:</strong>
@@ -134,35 +128,24 @@
         </section>
 
 
-        <!-- Audio controls -->
+<!-- Audio controls -->
+<div class="actions">
+    
+ <button id="play-pause-button" type="button" aria-label="Play">
+    <img id="play-pause-icon" src="assets/icons/play.png" alt="">
+ </button>
 
-        <div class="actions">
-            <button id="start-button">
-                Start
-            </button>
+ <button id="repeat-button" type="button" aria-label="Repeat" aria-pressed="false">
+     <img src="assets/icons/repeat.png" alt="">
+ </button>
 
-            <button id="pause-button">
-                Pause
-            </button>
+</div>
 
-            <button id="reset-button">
-                Reset
-            </button>
+<!-- Audio -->
+<audio id="genre-audio"loop></audio>
+<audio id="atmosphere-audio"loop></audio>
 
-        </div>
-
-
-        <!-- Audio -->
-        <!--
-        The audio element and loop attribute are based on MDN:
-        https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/audio
-        -->
-
-        <audio id="genre-audio"loop></audio>
-        <audio id="atmosphere-audio"loop></audio>
-
-    </main>
-
+</main>
 
     <footer>
         <p>
