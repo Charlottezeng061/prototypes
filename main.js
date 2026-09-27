@@ -70,17 +70,10 @@ let nostalgicSounds = [
 // so [0] selects the first sound in the array.
 // Reference: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays
 
-let selectedGenreSound =
-    fantasySounds[0];
-
-let selectedAtmosphereSound =
-    calmSounds[0];
-
-let selectedGenreName =
-    "Piano & Strings";
-
-let selectedAtmosphereName =
-    "Rain";
+let selectedGenreSound = "";
+let selectedAtmosphereSound = "";
+let selectedGenreName = "";
+let selectedAtmosphereName = "";
 
 ///////////// Audio
 // Find the two audio elements used to play the genre and atmosphere sounds
@@ -457,93 +450,117 @@ intensityRange.addEventListener("input", function(e){
     // change both audio layers
     genreAudio.volume = volume;
     atmosphereAudio.volume = volume;
-
-    // update Now Playing
-    playingIntensity.textContent =
-        e.target.value + "%";
 });
 
 ///////////// Soundtrack Control Buttons
 // Find the Start, Pause and Reset buttons and the status message
 
-const startButton =
-    document.getElementById("start-button");
+const playPauseButton =
+    document.getElementById("play-pause-button");
 
-const pauseButton =
-    document.getElementById("pause-button");
+const playPauseIcon =
+    document.getElementById("play-pause-icon");
+
+const repeatButton =
+    document.getElementById("repeat-button");
 
 const resetButton =
     document.getElementById("reset-button");
 
-const statusText =
-    document.getElementById("status");
+let isPlaying = false;
+let hasStarted = false;
+let isRepeat = false;
 
 
 //////////// Start Soundtrack
-// Start the selected genre and atmosphere sounds together
 
 function startSoundtrack(){
-    // pause both sounds first
+
     genreAudio.pause();
     atmosphereAudio.pause();
 
-    // use the sounds selected by the user
     genreAudio.src =
         selectedGenreSound;
+
     atmosphereAudio.src =
         selectedAtmosphereSound;
 
-    // start both sounds from the beginning
     genreAudio.currentTime = 0;
     atmosphereAudio.currentTime = 0;
 
-    // use the current intensity
     let volume =
         intensityRange.value / 100;
-    genreAudio.volume =
-        volume;
-    atmosphereAudio.volume =
-        volume;
 
-    // play both audio layers together
+    genreAudio.volume = volume;
+    atmosphereAudio.volume = volume;
+
     genreAudio.play();
     atmosphereAudio.play();
-
-    // update Now Playing
-
-    playingGenre.textContent =
-        selectedGenreName;
-
-    playingAtmosphere.textContent =
-        selectedAtmosphereName;
-
-    playingIntensity.textContent =
-        intensityRange.value + "%";
-
-
-    statusText.textContent =
-        "Soundtrack playing.";
 }
 
-///////////// Pause Soundtrack
+///////////// Play / Pause
 
-function pauseSoundtrack(){
-    genreAudio.pause();
-    atmosphereAudio.pause();
-    statusText.textContent =
-        "Soundtrack paused.";
+function togglePlayPause(){
+
+    // both sounds need to be selected first
+    if(selectedGenreSound === "" || selectedAtmosphereSound === ""){
+        return;
+    }
+
+    if(isPlaying === false){
+
+        if(hasStarted === false){
+
+            startSoundtrack();
+            hasStarted = true;
+
+        } else {
+
+            genreAudio.play();
+            atmosphereAudio.play();
+        }
+
+        playPauseIcon.src =
+            "assets/icons/pause.png";
+
+        playPauseButton.setAttribute(
+            "aria-label",
+            "Pause"
+        );
+
+        isPlaying = true;
+
+    } else {
+
+        genreAudio.pause();
+        atmosphereAudio.pause();
+
+        playPauseIcon.src =
+            "assets/icons/play.png";
+
+        playPauseButton.setAttribute(
+            "aria-label",
+            "Play"
+        );
+
+        isPlaying = false;
+    }
 }
 
-function selectGenreSound(sound, name){
-    selectedGenreSound = sound;
-    selectedGenreName = name;
-    playGenreSound();
-}
 
-function selectAtmosphereSound(sound, name){
-    selectedAtmosphereSound = sound;
-    selectedAtmosphereName = name;
-    playAtmosphereSound();
+///////////// Repeat
+
+function toggleRepeat(){
+
+    isRepeat = !isRepeat;
+
+    genreAudio.loop = isRepeat;
+    atmosphereAudio.loop = isRepeat;
+
+    repeatButton.setAttribute(
+        "aria-pressed",
+        isRepeat
+    );
 }
 
 ///////////// Play Genre Sound
@@ -562,15 +579,7 @@ function playGenreSound(){
 
     // play selected genre sound
     genreAudio.play();
-
-    // update Now Playing
-    playingGenre.textContent =
-        selectedGenreName;
 }
-let selectedGenreButton = null;
-
-let selectedAtmosphereButton = null;
-
 
 ///////////// Play Atmosphere Sound
 
@@ -587,9 +596,6 @@ function playAtmosphereSound(){
 
     // play selected atmosphere sound
     atmosphereAudio.play();
-
-    // update Now Playing
-    playingAtmosphere.textContent = selectedAtmosphereName;
 }
 
 ///////////// Reset
@@ -615,6 +621,13 @@ selectedAtmosphereSound = "";
 selectedGenreName = "";
 selectedAtmosphereName = "";
 
+// remove selected button styles
+document.querySelectorAll(
+"#genre-sounds button, #atmosphere-sounds button"
+).forEach(function(button){
+     button.classList.remove("selected");
+ });
+
 // reset intensity
 intensityRange.value = 50;
 intensityOutputText.textContent = "50%";
@@ -623,33 +636,45 @@ intensityOutputText.textContent = "50%";
 genreAudio.volume = 0.5;
 atmosphereAudio.volume = 0.5;
 
-// reset Now Playing
-playingGenre.textContent ="—";
-playingAtmosphere.textContent ="—";
-playingIntensity.textContent ="—";
+// reset Play / Pause
+    isPlaying = false;
+    hasStarted = false;
 
-// reset status
-statusText.textContent =
-    "Choose one genre sound and one atmosphere sound.";
+    playPauseIcon.src =
+        "assets/icons/play.png";
+
+    playPauseButton.setAttribute(
+        "aria-label",
+        "Play"
+    );
+
+    // reset Repeat
+    isRepeat = false;
+
+    genreAudio.loop = false;
+    atmosphereAudio.loop = false;
+
+    repeatButton.setAttribute(
+        "aria-pressed",
+        "false"
+    );
 }
 
 ///////////// Button Event Listeners
-startButton.addEventListener(
+playPauseButton.addEventListener(
     "click",
-    startSoundtrack
+    togglePlayPause
 );
 
-pauseButton.addEventListener(
+repeatButton.addEventListener(
     "click",
-    pauseSoundtrack
+    toggleRepeat
 );
-
 
 resetButton.addEventListener(
     "click",
     resetSoundtrack
 );
-
 
 ///////////// Selected Button State
 // Keep one genre sound button highlighted at a time
