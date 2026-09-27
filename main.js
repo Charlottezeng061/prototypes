@@ -3,64 +3,63 @@
 // JavaScript arrays are used to store the four sounds
 // available for each genre and atmosphere.
 
-
-// Genre sounds
 let fantasySounds = [
-    "./assets/audio/genre/fantasy1.wav",
-    "./assets/audio/genre/fantasy2.wav",
-    "./assets/audio/genre/fantasy3.wav",
-    "./assets/audio/genre/fantasy4.wav"
+    "assets/audio/genre/fantasy1.mp3",
+    "assets/audio/genre/fantasy2.mp3",
+    "assets/audio/genre/fantasy3.mp3",
+    "assets/audio/genre/fantasy4.mp3"
 ];
 
 let mysterySounds = [
-    "./assets/audio/genre/mystery1.wav",
-    "./assets/audio/genre/mystery2.wav",
-    "./assets/audio/genre/mystery3.wav",
-    "./assets/audio/genre/mystery4.wav"
+    "assets/audio/genre/mystery1.mp3",
+    "assets/audio/genre/mystery2.mp3",
+    "assets/audio/genre/mystery3.mp3",
+    "assets/audio/genre/mystery4.mp3"
 ];
 
 let romanceSounds = [
-    "./assets/audio/genre/romance1.wav",
-    "./assets/audio/genre/romance2.wav",
-    "./assets/audio/genre/romance3.wav",
-    "./assets/audio/genre/romance4.wav"
+    "assets/audio/genre/romance1.mp3",
+    "assets/audio/genre/romance2.mp3",
+    "assets/audio/genre/romance3.mp3",
+    "assets/audio/genre/romance4.mp3"
 ];
 
 let sciFiSounds = [
-    "./assets/audio/genre/sci-fi1.wav",
-    "./assets/audio/genre/sci-fi2.wav",
-    "./assets/audio/genre/sci-fi3.wav",
-    "./assets/audio/genre/sci-fi4.wav"
+    "assets/audio/genre/sci-fi1.mp3",
+    "assets/audio/genre/sci-fi2.mp3",
+    "assets/audio/genre/sci-fi3.mp3",
+    "assets/audio/genre/sci-fi4.mp3"
 ];
 
-// Atmosphere sounds
+
 let calmSounds = [
-    "./assets/audio/atmosphere/calm1.wav",
-    "./assets/audio/atmosphere/calm2.wav",
-    "./assets/audio/atmosphere/calm3.wav",
-    "./assets/audio/atmosphere/calm4.wav"
+    "assets/audio/atmosphere/calm1.mp3",
+    "assets/audio/atmosphere/calm2.mp3",
+    "assets/audio/atmosphere/calm3.mp3",
+    "assets/audio/atmosphere/calm4.mp3"
 ];
 
 let darkSounds = [
-    "./assets/audio/atmosphere/dark1.wav",
-    "./assets/audio/atmosphere/dark2.wav",
-    "./assets/audio/atmosphere/dark3.wav",
-    "./assets/audio/atmosphere/dark4.wav"
+    "assets/audio/atmosphere/dark1.mp3",
+    "assets/audio/atmosphere/dark2.mp3",
+    "assets/audio/atmosphere/dark3.mp3",
+    "assets/audio/atmosphere/dark4.mp3"
 ];
 
 let magicalSounds = [
-    "./assets/audio/atmosphere/magical1.wav",
-    "./assets/audio/atmosphere/magical2.wav",
-    "./assets/audio/atmosphere/magical3.wav",
-    "./assets/audio/atmosphere/magical4.wav"
+    "assets/audio/atmosphere/magical1.mp3",
+    "assets/audio/atmosphere/magical2.mp3",
+    "assets/audio/atmosphere/magical3.mp3",
+    "assets/audio/atmosphere/magical4.mp3"
 ];
 
 let nostalgicSounds = [
-    "./assets/audio/atmosphere/nostalgic1.wav",
-    "./assets/audio/atmosphere/nostalgic2.wav",
-    "./assets/audio/atmosphere/nostalgic3.wav",
-    "./assets/audio/atmosphere/nostalgic4.wav"
+    "assets/audio/atmosphere/nostalgic1.mp3",
+    "assets/audio/atmosphere/nostalgic2.mp3",
+    "assets/audio/atmosphere/nostalgic3.mp3",
+    "assets/audio/atmosphere/nostalgic4.mp3"
 ];
+
 
 ///////////// Selected Sounds
 
@@ -95,16 +94,6 @@ const atmosphereAudio =
 genreAudio.volume = 0.5;
 atmosphereAudio.volume = 0.5;
 
-///////////// Now Playing
-// Find the text elements used to show the current soundtrack information
-const playingGenre =
-document.getElementById("playing-genre");
-
-const playingAtmosphere =
-document.getElementById("playing-atmosphere");
-
-const playingIntensity =
-document.getElementById("playing-intensity");
 
 ///////////// Genre Sound Buttons
 const fantasySound1 =
