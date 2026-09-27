@@ -1,11 +1,12 @@
 /* Prototype 2 */
 
+/* main colours used across the prototype */
 :root {
     --colour-1: #3f2e11;
     --colour-2: #dfd4b8;
 }
 
-
+/* overall page style */
 body {
     background-color: var(--colour-2);
     color: var(--colour-1);
@@ -15,15 +16,12 @@ body {
     padding: 1rem;
 }
 
-
-
 h1 {
     font-family: "gelica", sans-serif;
     font-weight: 600;
 
     color: #506744;
 }
-
 
 h2,
 h3,
@@ -33,11 +31,9 @@ legend,
     font-weight: 500;
 }
 
-
 h2 {
     color: #506744;
 }
-
 
 h3,
 legend,
@@ -45,8 +41,7 @@ legend,
     color: #6e845f;
 }
 
-
-
+/* centre the prototype title */
 header {
     text-align: center;
     margin-bottom: 40px;
@@ -60,6 +55,7 @@ header h1 {
     margin-right: auto;
 }
 
+/* make the range values easier to notice */
 .range-labels span {
     font-weight: 600;
 }
@@ -98,33 +94,26 @@ header h1 {
     text-decoration: underline;
 }
 
-
-
+/* keep the main content at a readable width */
 main {
     max-width: 800px;
     margin: auto;
 }
 
-
-
 .prototype-heading {
     margin-bottom: 40px;
 }
-
 
 .prototype-heading p {
     margin-bottom: 5px;
 }
 
-
-
+/* separate each control into a clear section */
 .control-section {
     padding-top: 25px;
     padding-bottom: 25px;
     border-top: 1px solid var(--colour-1);
 }
-
-
 
 .control-title {
     display: block;
@@ -132,23 +121,19 @@ main {
     font-size: 1.2rem;
 }
 
-
-
+/* remove the default fieldset style */
 fieldset {
     border: none;
     padding: 0;
     margin: 0;
 }
 
-
-
 legend {
     margin-bottom: 15px;
     font-size: 1.2rem;
 }
 
-
-
+/* dropdown controls for genre and atmosphere */
 select {
     width: 100%;
     padding: 8px;
@@ -159,22 +144,18 @@ select {
     font-family: "proxima-nova", sans-serif;
 }
 
-
-
+/* labels on each side of the volume sliders */
 .range-labels {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
 }
 
-
-
+/* volume sliders use the main project colour */
 input[type="range"] {
     width: 100%;
     accent-color: var(--colour-1);
 }
-
-
 
 #mood-value,
 #intensity-value {
@@ -182,8 +163,6 @@ input[type="range"] {
     font-weight: 600;
     margin-top: 10px;
 }
-
-
 
 .actions {
     display: flex;
@@ -193,30 +172,40 @@ input[type="range"] {
     margin-bottom: 30px;
 }
 
-
-
-button {
-    padding: 6px 12px;
+/* soundtrack control buttons */
+.actions button {
+    width: 44px;
+    height: 44px;
+    padding: 0;
     border: 1px solid var(--colour-1);
-    border-radius: 5px;
+    border-radius: 50%;
     background-color: var(--colour-2);
-    color: var(--colour-1);
-    font-family: "proxima-nova", sans-serif;
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
-button:hover {
-    background-color: var(--colour-1);
-    color: var(--colour-2);
+/* icon size */
+.actions button img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
-
-button:disabled {
-    opacity: 0.5;
+/* button hover */
+.actions button:hover {
+    background-color: #6e845f;
 }
 
+/* disabled pause button */
+.actions button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
 
+/* show the settings of the soundtrack currently playing */
 .now-playing {
     padding-top: 25px;
     padding-bottom: 25px;
@@ -225,18 +214,15 @@ button:disabled {
     margin-top: 30px;
 }
 
-
 .now-playing h2 {
     margin-top: 0;
 }
-
 
 .now-playing strong {
     color: #506744;
 }
 
-
-
+/* footer */
 footer {
     text-align: center;
     margin-top: 50px;
