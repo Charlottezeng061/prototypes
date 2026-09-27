@@ -7,7 +7,6 @@ const romanceRadio = document.getElementById("romance");
 const sciFiRadio = document.getElementById("sci-fi");
 const playingGenre = document.getElementById("playing-genre");
 
-mysteryRadio.addEventListener("input", listGenreSelection);
 ///////////// Atmosphere Radio
 // radio input method adapted from class input-event demo
 // https://github.com/rmit-idad-2650-wed/input-event-demos
