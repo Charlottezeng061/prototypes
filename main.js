@@ -53,61 +53,60 @@ const atmosphereAudio =
 // one sound will be randomly selected when the soundtrack starts
 
 let fantasySounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy1.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy2.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy3.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/fantasy4.mp3"
+    "assets/audio/genre/fantasy1.mp3",
+    "assets/audio/genre/fantasy2.mp3",
+    "assets/audio/genre/fantasy3.mp3",
+    "assets/audio/genre/fantasy4.mp3"
 ];
 
 let mysterySounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/mystery1.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/mystery2.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/mystery3.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/mystery4.mp3"
+    "assets/audio/genre/mystery1.mp3",
+    "assets/audio/genre/mystery2.mp3",
+    "assets/audio/genre/mystery3.mp3",
+    "assets/audio/genre/mystery4.mp3"
 ];
 
 let romanceSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/romance1.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/romance2.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/romance3.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/romance4.mp3"
+    "assets/audio/genre/romance1.mp3",
+    "assets/audio/genre/romance2.mp3",
+    "assets/audio/genre/romance3.mp3",
+    "assets/audio/genre/romance4.mp3"
 ];
 
 let sciFiSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi1.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi2.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi3.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/sci-fi4.mp3"
+    "assets/audio/genre/sci-fi1.mp3",
+    "assets/audio/genre/sci-fi2.mp3",
+    "assets/audio/genre/sci-fi3.mp3",
+    "assets/audio/genre/sci-fi4.mp3"
 ];
 
 let calmSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/calm1.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/calm2.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/calm3.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/calm4.mp3"
+    "assets/audio/atmosphere/calm1.mp3",
+    "assets/audio/atmosphere/calm2.mp3",
+    "assets/audio/atmosphere/calm3.mp3",
+    "assets/audio/atmosphere/calm4.mp3"
 ];
 
 let darkSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/dark1.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/dark2.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/dark3.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/dark4.mp3"
+    "assets/audio/atmosphere/dark1.mp3",
+    "assets/audio/atmosphere/dark2.mp3",
+    "assets/audio/atmosphere/dark3.mp3",
+    "assets/audio/atmosphere/dark4.mp3"
 ];
 
 let magicalSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/magical1.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/magical2.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/magical3.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/magical4.mp3"
+    "assets/audio/atmosphere/magical1.mp3",
+    "assets/audio/atmosphere/magical2.mp3",
+    "assets/audio/atmosphere/magical3.mp3",
+    "assets/audio/atmosphere/magical4.mp3"
 ];
 
 let nostalgicSounds = [
-"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic1.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic2.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic3.mp3",
-"https://archive.org/download/audio-20260925-genre-atmosphere/nostalgic4.mp3"
+    "assets/audio/atmosphere/nostalgic1.mp3",
+    "assets/audio/atmosphere/nostalgic2.mp3",
+    "assets/audio/atmosphere/nostalgic3.mp3",
+    "assets/audio/atmosphere/nostalgic4.mp3"
 ];
-
 
 ///////////// Random Sound
 // random method adapted from the class extended techniques demo
