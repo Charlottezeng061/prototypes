@@ -95,17 +95,6 @@ const atmosphereAudio =
 genreAudio.volume = 0.5;
 atmosphereAudio.volume = 0.5;
 
-///////////// Now Playing
-// Find the text elements used to show the current soundtrack information
-const playingGenre =
-document.getElementById("playing-genre");
-
-const playingAtmosphere =
-document.getElementById("playing-atmosphere");
-
-const playingIntensity =
-document.getElementById("playing-intensity");
-
 ///////////// Genre Sound Buttons
 const fantasySound1 =
 document.getElementById("fantasy-sound-1");
@@ -477,18 +466,21 @@ intensityRange.addEventListener("input", function(e){
 ///////////// Soundtrack Control Buttons
 // Find the Start, Pause and Reset buttons and the status message
 
-const startButton =
-    document.getElementById("start-button");
+const playPauseButton =
+    document.getElementById("play-pause-button");
 
-const pauseButton =
-    document.getElementById("pause-button");
+const playPauseIcon =
+    document.getElementById("play-pause-icon");
+
+const repeatButton =
+    document.getElementById("repeat-button");
 
 const resetButton =
     document.getElementById("reset-button");
 
-const statusText =
-    document.getElementById("status");
-
+let isPlaying = false;
+let hasStarted = false;
+let isRepeat = false;
 
 //////////// Start Soundtrack
 // Start the selected genre and atmosphere sounds together
@@ -519,32 +511,64 @@ function startSoundtrack(){
     // play both audio layers together
     genreAudio.play();
     atmosphereAudio.play();
-
-    // update Now Playing
-
-    playingGenre.textContent =
-        selectedGenreName;
-
-    playingAtmosphere.textContent =
-        selectedAtmosphereName;
-
-    playingIntensity.textContent =
-        intensityRange.value + "%";
-
-
-    statusText.textContent =
-        "Soundtrack playing.";
 }
 
-///////////// Pause Soundtrack
+///////////// Play / Pause
 
-function pauseSoundtrack(){
-    genreAudio.pause();
-    atmosphereAudio.pause();
-    statusText.textContent =
-        "Soundtrack paused.";
+function togglePlayPause(){
+
+    if(isPlaying === false){
+
+        if(hasStarted === false){
+            startSoundtrack();
+            hasStarted = true;
+        }
+        else {
+            genreAudio.play();
+            atmosphereAudio.play();
+        }
+
+        playPauseIcon.src =
+            "assets/icons/pause.png";
+
+        playPauseButton.setAttribute(
+            "aria-label",
+            "Pause"
+        );
+
+        isPlaying = true;
+
+    } else {
+
+        genreAudio.pause();
+        atmosphereAudio.pause();
+
+        playPauseIcon.src =
+            "assets/icons/play.png";
+
+        playPauseButton.setAttribute(
+            "aria-label",
+            "Play"
+        );
+
+        isPlaying = false;
+    }
 }
 
+///////////// Repeat
+
+function toggleRepeat(){
+
+    isRepeat = !isRepeat;
+
+    genreAudio.loop = isRepeat;
+    atmosphereAudio.loop = isRepeat;
+
+    repeatButton.setAttribute(
+        "aria-pressed",
+        isRepeat
+    );
+}
 function selectGenreSound(sound, name){
     selectedGenreSound = sound;
     selectedGenreName = name;
@@ -573,15 +597,10 @@ function playGenreSound(){
 
     // play selected genre sound
     genreAudio.play();
-
-    // update Now Playing
-    playingGenre.textContent =
-        selectedGenreName;
 }
+
 let selectedGenreButton = null;
-
 let selectedAtmosphereButton = null;
-
 
 ///////////// Play Atmosphere Sound
 
@@ -598,9 +617,6 @@ function playAtmosphereSound(){
 
     // play selected atmosphere sound
     atmosphereAudio.play();
-
-    // update Now Playing
-    playingAtmosphere.textContent = selectedAtmosphereName;
 }
 
 ///////////// Reset
@@ -619,12 +635,18 @@ atmosphereAudio.currentTime = 0;
 genreAudio.src ="";
 atmosphereAudio.src = "";
 
-// remove selected sounds
+// return to default sounds
+selectedGenreSound =
+    fantasySounds[0];
 
-selectedGenreSound = "";
-selectedAtmosphereSound = "";
-selectedGenreName = "";
-selectedAtmosphereName = "";
+selectedAtmosphereSound =
+    calmSounds[0];
+
+selectedGenreName =
+    "Piano & Strings";
+
+selectedAtmosphereName =
+    "Rain";
 
 // reset intensity
 intensityRange.value = 50;
@@ -639,22 +661,40 @@ playingGenre.textContent ="—";
 playingAtmosphere.textContent ="—";
 playingIntensity.textContent ="—";
 
-// reset status
-statusText.textContent =
-    "Choose one genre sound and one atmosphere sound.";
+// reset Play / Pause
+isPlaying = false;
+hasStarted = false;
+
+playPauseIcon.src =
+    "assets/icons/play.png";
+
+playPauseButton.setAttribute(
+    "aria-label",
+    "Play"
+);
+
+// reset Repeat
+isRepeat = false;
+
+genreAudio.loop = false;
+atmosphereAudio.loop = false;
+
+repeatButton.setAttribute(
+    "aria-pressed",
+    "false"
+);
 }
 
 ///////////// Button Event Listeners
-startButton.addEventListener(
+playPauseButton.addEventListener(
     "click",
-    startSoundtrack
+    togglePlayPause
 );
 
-pauseButton.addEventListener(
+repeatButton.addEventListener(
     "click",
-    pauseSoundtrack
+    toggleRepeat
 );
-
 
 resetButton.addEventListener(
     "click",

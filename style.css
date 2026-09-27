@@ -42,6 +42,14 @@ h3,
     color: #6e845f;
 }
 
+legend {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-family: "gelica", sans-serif;
+    font-weight: 500;
+    color: #6e845f;
+}
+
 
 
 /* Header */
@@ -107,31 +115,11 @@ main {
     padding-bottom: 25px;
 }
 
-
-/* radio groups */
+/* sound groups */
 fieldset {
     border: none;
     padding: 0;
     margin: 0;
-}
-
-legend {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-/* radio options */
-.radio-option {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-/* radio label with description */
-.radio-option label {
-    display: flex;
-    flex-direction: column;
 }
 
 /* sound examples */
@@ -142,48 +130,17 @@ legend {
     margin-top: 5px;
 }
 
-
-.sound-tags span {
-    padding: 2px 7px;
-
-    border: 1px solid #9c8e73;
-    border-radius: 10px;
-
-    font-size: 0.8rem;
-    font-weight: 300;
-}
-
-
-/* option name */
-.radio-option label strong {
-    font-weight: 600;
-}
-
-/* short guidance text */
-.radio-option label span {
-    font-size: 0.9rem;
-    font-weight: 300;
-    margin-top: 2px;
-}
-
-/* range slider */
-.range-labels {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-
-select {
+/* intensity slider */
+#intensity {
     width: 100%;
-    padding: 8px;
-    border: 1px solid var(--colour-1);
-    border-radius: 5px;
-    background-color: var(--colour-2);
-    color: var(--colour-1);
-    font-family: "proxima-nova", sans-serif;
+    accent-color:var(--colour-1);
 }
 
-
+#intensity-value {
+    margin-top: 5px;
+    max-width: none;
+    text-align: center;
+}
 
 /* Buttons */
 .actions {
@@ -217,64 +174,53 @@ button:disabled {
     cursor: default;
 }
 
+/* each sound category */
+.sound-group {
+    margin-bottom: 18px;
+}
+
+.sound-group:last-child {
+    margin-bottom: 0;
+}
+
 /* keep selected sound button highlighted */
 .sound-tags button.selected {
     background-color: #506744;
     color: var(--colour-2);
 }
 
+/* soundtrack control buttons */
 
-/* Generated Soundtrack */
-.now-playing {
-    margin-top: 30px;
-    padding: 25px;
+#play-pause-button,
+#repeat-button,
+#reset-button {
+    width: 44px;
+    height: 44px;
+    padding: 0;
     border: 1px solid var(--colour-1);
-    border-radius: 8px;
+    border-radius: 50%;
+    background-color: var(--colour-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.now-playing h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
+#play-pause-button img,
+#repeat-button img,
+#reset-button img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
 }
 
-
-/* Individual Random Sound */
-
-.sound-result {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-top: 1px solid #9c8e73;
-
+#play-pause-button:hover,
+#repeat-button:hover,
+#reset-button:hover {
+    background-color: #6e845f;
 }
 
-.sound-result:first-of-type {
-    border-top: none;
-
-}
-
-.sound-result p {
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.sound-result label {
-    font-weight: 300;
-}
-
-
-/* Checkbox */
-input[type="checkbox"] {
-    margin-right: 6px;
-    accent-color: var(--colour-1);
-
-}
-
-
-/* Status */
-#status {
-    text-align: center;
-    margin-top: 20px;
-    font-style: italic;
+#repeat-button[aria-pressed="true"] {
+    background-color: #6e845f;
 }
 
 footer {
