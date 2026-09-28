@@ -157,9 +157,6 @@ const repeatButton =
 const resetButton =
     document.getElementById("reset-button");
 
-const statusText =
-    document.getElementById("status");
-
 let isPlaying = false;
 let hasStarted = false;
 let isRepeat = false;
@@ -247,9 +244,6 @@ function togglePlayPause(){
 
         playPauseIcon.src =
     "assets/icons/pause.png";
-    // temporary test
-console.log("changed to pause");
-console.log(playPauseIcon.src);
 
         playPauseButton.setAttribute(
             "aria-label",
@@ -270,9 +264,6 @@ console.log(playPauseIcon.src);
             "aria-label",
             "Play"
         );
-
-        statusText.textContent =
-            "Soundtrack paused.";
 
         isPlaying = false;
     }
