@@ -126,6 +126,7 @@ let nostalgicNames = [
     "Old Clock"
 ];
 
+
 ///////////// Select Controls
 
 // select input method adapted from the class input-event demo
@@ -183,15 +184,14 @@ const playPauseIcon =
     document.getElementById("play-pause-icon");
 
 let isPlaying = false;
+let hasStarted = false;
 
 const repeatButton =
     document.getElementById("repeat-button");
 let isRepeat = false;
 
-const statusText =
-    document.getElementById("status");
-
-
+const resetButton =
+    document.getElementById("reset-button");
 
 ///////////// Random Number
 // random method adapted from the class extended techniques demo
@@ -324,17 +324,18 @@ function generateSoundtrack(){
                 nostalgicNames[number];
         }
     }
-    // update status
-    statusText.textContent =
-        "New soundtrack generated.";}
-
-//////////// Start Soundtrack
-
+}
 ///////////// Play and Pause Soundtrack
 
 function togglePlayPause(){
 
     if(isPlaying === false){
+
+        // create a soundtrack the first time play is clicked
+        if(hasStarted === false){
+            generateSoundtrack();
+            hasStarted = true;
+        }
 
         // play both audio layers
         genreAudio.play();
@@ -348,10 +349,8 @@ function togglePlayPause(){
             "Pause"
         );
 
-        statusText.textContent =
-            "Soundtrack playing.";
-
         isPlaying = true;
+
     } else {
 
         // pause both audio layers
@@ -366,13 +365,9 @@ function togglePlayPause(){
             "Play"
         );
 
-        statusText.textContent =
-            "Soundtrack paused.";
-
         isPlaying = false;
     }
 }
-
 ///////////// Repeat Soundtrack
 
 // repeat both audio layers when repeat is turned on
@@ -390,6 +385,50 @@ function toggleRepeat(){
         "aria-pressed",
         isRepeat
     );
+}
+
+///////////// Reset Soundtrack
+
+function resetSoundtrack(){
+
+    // stop both audio layers
+    genreAudio.pause();
+    atmosphereAudio.pause();
+
+    // return audio to the beginning
+    genreAudio.currentTime = 0;
+    atmosphereAudio.currentTime = 0;
+
+    // reset play button
+    isPlaying = false;
+    hasStarted = false;
+
+    playPauseIcon.src =
+        "assets/icons/play.png";
+
+    playPauseButton.setAttribute(
+        "aria-label",
+        "Play"
+    );
+
+    // turn repeat off
+    isRepeat = false;
+
+    genreAudio.loop = false;
+    atmosphereAudio.loop = false;
+
+    repeatButton.setAttribute(
+        "aria-pressed",
+        "false"
+    );
+
+    // unlock both sounds
+    genreLock.checked = false;
+    atmosphereLock.checked = false;
+
+    // clear generated results
+    genreResult.textContent = "—";
+    atmosphereResult.textContent = "—";
 }
 
 ///////////// Button Event Listeners
@@ -410,3 +449,7 @@ repeatButton.addEventListener(
     toggleRepeat
 );
 
+resetButton.addEventListener(
+    "click",
+    resetSoundtrack
+);
