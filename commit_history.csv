@@ -1,3 +1,13 @@
+Charlotte061,Mon Sep 28 16:58:44 2026 +1000,Refine Prototype 2 controls and styling,Updated the playback controls with icons, removed the status message, and refined the footer link styling.
+
+Charlotte061,Sun Sep 27 17:29:07 2026 +1000,Improve Prototype 2 controls and audio playback,Replaced external audio links with local MP3 files for more stable playback. Updated the Now Playing section so it only changes when the soundtrack starts, changed the Start, Pause and Reset controls to icon buttons, and added clearer code comments to explain the audio layers and interactions.
+
+Charlotte061,Fri Sep 25 20:27:45 2026 +1000,fix sound problem,
+Charlotte061,Wed Sep 23 14:10:41 2026 +1000,update link address,
+Charlotte061,Sun Sep 20 19:10:28 2026 +1000,Add audio files and icons,
+Charlotte061,Wed Sep 9 21:02:23 2026 +1000,copy prototype2,copied prototype2 to new branch and updated assignment link
+
+Charlotte061,Wed Sep 9 20:36:47 2026 +1000,copy prototype1 to new repository,I updated the assignment2link as an external link in this html
 Charlotte061,Wed Sep 9 14:52:20 2026 +1000,update,
 Charlotte061,Wed Sep 9 14:47:33 2026 +1000,fix pause button problem,
 Charlotte061,Wed Sep 9 14:25:03 2026 +1000,change code layout,
