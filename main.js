@@ -195,28 +195,28 @@ fantasySound1.addEventListener("click", function(){
 
     selectGenreSound(
         fantasySounds[0],
-        "Piano & Strings"
+        "Gentle & Flowing"
     );
 });
 fantasySound2.addEventListener("click", function(){
 
     selectGenreSound(
         fantasySounds[1],
-        "Medieval Lute"
+        "Light & Playful"
     );
 });
 fantasySound3.addEventListener("click", function(){
 
     selectGenreSound(
         fantasySounds[2],
-        "Fantasy Soundscape"
+        "Dreamy & Spacious"
     );
 });
 fantasySound4.addEventListener("click", function(){
 
     selectGenreSound(
         fantasySounds[3],
-        "Piano & Pad"
+        "Soft & Floating"
     );
 });
 
@@ -224,28 +224,28 @@ mysterySound1.addEventListener("click", function(){
 
     selectGenreSound(
         mysterySounds[0],
-        "Mystery Background"
+        "Dark & Suspended"
     );
 });
 mysterySound2.addEventListener("click", function(){
 
     selectGenreSound(
         mysterySounds[1],
-        "Suspense Strings"
+        "Tense & Rising"
     );
 });
 mysterySound3.addEventListener("click", function(){
 
     selectGenreSound(
         mysterySounds[2],
-        "Choir & Guitar"
+        "Haunting & Uneasy"
     );
 });
 mysterySound4.addEventListener("click", function(){
 
     selectGenreSound(
         mysterySounds[3],
-        "Bright Mystery"
+        "Curious & Playful"
     );
 });
 
@@ -254,28 +254,28 @@ romanceSound1.addEventListener("click", function(){
 
     selectGenreSound(
         romanceSounds[0],
-        "Emotional Piano"
+        "Gentle & Tender"
     );
 });
 romanceSound2.addEventListener("click", function(){
 
     selectGenreSound(
         romanceSounds[1],
-        "Violin & Cello"
+        "Warm & Flowing"
     );
 });
 romanceSound3.addEventListener("click", function(){
 
     selectGenreSound(
         romanceSounds[2],
-        "Lo-fi Guitar"
+        "Mellow & Relaxed"
     );
 });
 romanceSound4.addEventListener("click", function(){
 
     selectGenreSound(
         romanceSounds[3],
-        "Soft Strings"
+        "Soft & Emotional"
     );
 });
 
@@ -283,28 +283,28 @@ sciFiSound1.addEventListener("click", function(){
 
     selectGenreSound(
         sciFiSounds[0],
-        "Space Ambience"
+        "Distant & Spacious"
     );
 });
 sciFiSound2.addEventListener("click", function(){
 
     selectGenreSound(
         sciFiSounds[1],
-        "Sci-Fi Synth"
+        "Bright & Pulsing"
     );
 });
 sciFiSound3.addEventListener("click", function(){
 
     selectGenreSound(
         sciFiSounds[2],
-        "Deep Drone"
+        "Deep & Ominous"
     );
 });
 sciFiSound4.addEventListener("click", function(){
 
     selectGenreSound(
         sciFiSounds[3],
-        "Space Travel"
+        "Slow & Floating"
     );
 });
 
@@ -315,28 +315,28 @@ calmSound1.addEventListener("click", function(){
 
     selectAtmosphereSound(
         calmSounds[0],
-        "Rain"
+        "Soft & Steady"
     );
 });
 calmSound2.addEventListener("click", function(){
 
     selectAtmosphereSound(
         calmSounds[1],
-        "Windy Forest"
+        "Light & Breezy"
     );
 });
 calmSound3.addEventListener("click", function(){
 
     selectAtmosphereSound(
         calmSounds[2],
-        "Ocean Waves"
+        "Gentle & Flowing"
     );
 });
 calmSound4.addEventListener("click", function(){
 
     selectAtmosphereSound(
         calmSounds[3],
-        "Fireplace"
+        "Warm & Crackling"
     );
 });
 
@@ -344,28 +344,28 @@ darkSound1.addEventListener("click", function(){
 
     selectAtmosphereSound(
         darkSounds[0],
-        "Dark Drone"
+        "Low & Uneasy"
     );
 });
 darkSound2.addEventListener("click", function(){
 
     selectAtmosphereSound(
         darkSounds[1],
-        "Wind"
+        "Hollow & Distant"
     );
 });
 darkSound3.addEventListener("click", function(){
 
     selectAtmosphereSound(
         darkSounds[2],
-        "Deep Drone"
+        "Deep & Heavy"
     );
 });
 darkSound4.addEventListener("click", function(){
 
     selectAtmosphereSound(
         darkSounds[3],
-        "Cave"
+        "Echoing & Hollow"
     );
 });
 
@@ -373,28 +373,28 @@ magicalSound1.addEventListener("click", function(){
 
     selectAtmosphereSound(
         magicalSounds[0],
-        "Choir & Synth"
+        "Airy & Ethereal"
     );
 });
 magicalSound2.addEventListener("click", function(){
 
     selectAtmosphereSound(
         magicalSounds[1],
-        "Chimes"
+        "Bright & Sparkling"
     );
 });
 magicalSound3.addEventListener("click", function(){
 
     selectAtmosphereSound(
         magicalSounds[2],
-        "Cymbal Shimmer"
+        "Shimmering & Soft"
     );
 });
 magicalSound4.addEventListener("click", function(){
 
     selectAtmosphereSound(
         magicalSounds[3],
-        "Music Box & Bells"
+        "Delicate & Playful"
     );
 });
 
@@ -402,28 +402,28 @@ nostalgicSound1.addEventListener("click", function(){
 
     selectAtmosphereSound(
         nostalgicSounds[0],
-        "Lo-fi Piano"
+        "Soft & Mellow"
     );
 });
 nostalgicSound2.addEventListener("click", function(){
 
     selectAtmosphereSound(
         nostalgicSounds[1],
-        "Nostalgic Piano"
+        "Gentle & Reflective"
     );
 });
 nostalgicSound3.addEventListener("click", function(){
 
     selectAtmosphereSound(
         nostalgicSounds[2],
-        "Music Box"
+        "Delicate & Dreamy"
     );
 });
 nostalgicSound4.addEventListener("click", function(){
 
     selectAtmosphereSound(
         nostalgicSounds[3],
-        "Old Clock"
+        "Slow & Rhythmic"
     );
 });
 
@@ -453,7 +453,7 @@ intensityRange.addEventListener("input", function(e){
 });
 
 ///////////// Soundtrack Control Buttons
-// Find the Start, Pause and Reset buttons and the status message
+// Find the Play/Pause, Repeat and Reset buttons
 
 const playPauseButton =
     document.getElementById("play-pause-button");
