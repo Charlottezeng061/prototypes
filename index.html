@@ -9,14 +9,14 @@
     >
 
     <title>Prototype 2 - Live Sound Mixer</title>
-    <link rel="icon" type="image/ico" href="../assets/icons/book.ico">
+    <link rel="icon" type="image/ico" href="assets/icon/book.ico">
 
     <link
         rel="stylesheet"
         href="https://use.typekit.net/zlg4hjm.css"
     >
 
-    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="reset.css">
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
 
@@ -170,23 +170,19 @@
 
         <section class="actions">
 
-            <button id="start-button" type="button" aria-label="Start Soundtrack">
-                <img src="assets/icon/play.png" alt="">
-            </button>
+         <button id="play-pause-button" type="button" aria-label="Play">
+             <img id="play-pause-icon" src="assets/icon/play.png" alt="">
+         </button>
 
-           <button id="pause-button" type="button" aria-label="Pause">
-              <img src="assets/icon/pause.png" alt="">
-           </button>
-
+         <button id="repeat-button" type="button" aria-label="Repeat" aria-pressed="false">
+              <img src="assets/icon/repeat.png" alt="">
+         </button>
            <button id="reset-button" type="button" aria-label="Reset">
               <img src="assets/icon/replay.png" alt="">
-          </button>
+          </button> 
     </section>
 
-
-
         <!-- Now Playing -->
-
         <section class="now-playing">
             <h2>Now Playing</h2>
 
@@ -210,24 +206,16 @@
                 <strong id="playing-atmosphere-volume">—</strong>
             </p>
 
-            <p id="status">
-                Choose your sounds, then start the soundtrack.
-            </p>
-
         </section>
     </main>
 
-
-
-   <!-- random audio players -->
-<audio id="genre-audio" loop></audio>
-<audio id="atmosphere-audio" loop></audio>
-
-
+ <!-- random audio players -->
+<audio id="genre-audio"></audio>
+<audio id="atmosphere-audio"></audio>
 
     <footer>
 
-        Page maintained by:
+        Page maintained by :
 
         <a href="https://github.com/Charlottezeng061" target="_blank">
             Charlotte Zeng

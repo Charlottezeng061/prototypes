@@ -187,18 +187,21 @@ atmosphereAudio.volume =
 
 ///////////// Buttons
 
-const startButton =
-    document.getElementById("start-button");
+const playPauseButton =
+    document.getElementById("play-pause-button");
 
-const pauseButton =
-    document.getElementById("pause-button");
+const playPauseIcon =
+    document.getElementById("play-pause-icon");
+
+const repeatButton =
+    document.getElementById("repeat-button");
 
 const resetButton =
     document.getElementById("reset-button");
 
-const statusText =
-    document.getElementById("status");
-
+let isPlaying = false;
+let hasStarted = false;
+let isRepeat = false;
 
 ///////////// Start Soundtrack
 
@@ -278,25 +281,65 @@ atmosphereAudio.play();
 
     playingAtmosphereVolume.textContent =
         atmosphereVolume.value + "%";
-
-
-    statusText.textContent =
-        "Soundtrack playing.";
-
-    pauseButton.disabled =
-        false;
-
 }
 
-///////////// Pause Soundtrack
-function pauseSoundtrack(){
+///////////// Play / Pause
 
-    genreAudio.pause();
+function togglePlayPause(){
 
-    atmosphereAudio.pause();
+    if(isPlaying === false){
 
-    statusText.textContent =
-        "Soundtrack paused.";
+        if(hasStarted === false){
+
+            startSoundtrack();
+            hasStarted = true;
+
+        } else {
+
+            genreAudio.play();
+            atmosphereAudio.play();
+        }
+
+        playPauseIcon.src =
+            "assets/icon/pause.png";
+
+        playPauseButton.setAttribute(
+            "aria-label",
+            "Pause"
+        );
+
+        isPlaying = true;
+
+    } else {
+
+        genreAudio.pause();
+        atmosphereAudio.pause();
+
+        playPauseIcon.src =
+            "assets/icon/play.png";
+
+        playPauseButton.setAttribute(
+            "aria-label",
+            "Play"
+        );
+
+        isPlaying = false;
+    }
+}
+
+///////////// Repeat
+
+function toggleRepeat(){
+
+    isRepeat = !isRepeat;
+
+    genreAudio.loop = isRepeat;
+    atmosphereAudio.loop = isRepeat;
+
+    repeatButton.setAttribute(
+        "aria-pressed",
+        isRepeat
+    );
 }
 
 ///////////// Reset
@@ -342,24 +385,37 @@ function resetSoundtrack(){
         "—";
     playingAtmosphereVolume.textContent =
         "—";
+    
+     // reset Play / Pause
+    isPlaying = false;
+    hasStarted = false;
 
-    // reset status
-    statusText.textContent =
-     "Choose your sounds, then start the soundtrack.";
-    pauseButton.disabled =
-        true;
+    playPauseIcon.src =
+    "assets/icon/play.png";
+    playPauseButton.setAttribute(
+    "aria-label",
+    "Play"
+);
+     // reset Repeat
+    isRepeat = false;
+    genreAudio.loop = false;
+    atmosphereAudio.loop = false;
+    repeatButton.setAttribute(
+    "aria-pressed",
+    "false"
+);
 }
 
 ///////////// Button Event Listeners
 
-startButton.addEventListener(
+playPauseButton.addEventListener(
     "click",
-    startSoundtrack
+    togglePlayPause
 );
 
-pauseButton.addEventListener(
+repeatButton.addEventListener(
     "click",
-    pauseSoundtrack
+    toggleRepeat
 );
 
 resetButton.addEventListener(

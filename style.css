@@ -222,8 +222,24 @@ input[type="range"] {
     color: #506744;
 }
 
+/* keep Repeat highlighted when active */
+#repeat-button[aria-pressed="true"] {
+    background-color: #6e845f;
+}
+
 /* footer */
 footer {
     text-align: center;
     margin-top: 50px;
+}
+
+/* footer link */
+footer a {
+    color: #506744;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #6e845f;
+    text-decoration: underline;
 }
