@@ -450,14 +450,10 @@ intensityRange.addEventListener("input", function(e){
     // change both audio layers
     genreAudio.volume = volume;
     atmosphereAudio.volume = volume;
-
-    // update Now Playing
-    playingIntensity.textContent =
-        e.target.value + "%";
 });
 
 ///////////// Soundtrack Control Buttons
-// Find the Start, Pause and Reset buttons and the status message
+// Find the Play/Pause, Repeat and Reset buttons
 
 const playPauseButton =
     document.getElementById("play-pause-button");
@@ -571,17 +567,6 @@ function toggleRepeat(){
         isRepeat
     );
 }
-function selectGenreSound(sound, name){
-    selectedGenreSound = sound;
-    selectedGenreName = name;
-    playGenreSound();
-}
-
-function selectAtmosphereSound(sound, name){
-    selectedAtmosphereSound = sound;
-    selectedAtmosphereName = name;
-    playAtmosphereSound();
-}
 
 ///////////// Play Genre Sound
 
@@ -600,9 +585,6 @@ function playGenreSound(){
     // play selected genre sound
     genreAudio.play();
 }
-
-let selectedGenreButton = null;
-let selectedAtmosphereButton = null;
 
 ///////////// Play Atmosphere Sound
 
@@ -656,11 +638,6 @@ intensityOutputText.textContent = "50%";
 // reset volume
 genreAudio.volume = 0.5;
 atmosphereAudio.volume = 0.5;
-
-// reset Now Playing
-playingGenre.textContent ="—";
-playingAtmosphere.textContent ="—";
-playingIntensity.textContent ="—";
 
 // reset Play / Pause
 isPlaying = false;
