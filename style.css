@@ -102,6 +102,8 @@ main {
 
 .prototype-heading {
     margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--colour-1);
 }
 
 .prototype-heading p {
@@ -110,9 +112,8 @@ main {
 
 /* separate each control into a clear section */
 .control-section {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    border-top: 1px solid var(--colour-1);
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .control-title {
